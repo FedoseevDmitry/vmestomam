@@ -1,9 +1,6 @@
-/* @font-face { font-family: Roboto; font-weight: 400; src: url('../fonts/Roboto-Regular.ttf'); } 
-@font-face { font-family: Roboto; font-weight: 700; src: url('../fonts/Roboto-Bold.ttf');}
-@font-face { font-family: Roboto; font-weight: 900; src: url('../fonts/Roboto-Black.ttf');} */
-@font-face { font-family: Roboto; font-weight: 400; src: url('../fonts/Montserrat-Regular.ttf');} 
-@font-face { font-family: Roboto; font-weight: 700; src: url('../fonts/Montserrat-Bold.ttf');}
-@font-face { font-family: Roboto; font-weight: 900; src: url('../fonts/Montserrat-Black.ttf');}
+@font-face { font-family: Montserrat; font-weight: 400; src: url('../fonts/Montserrat-Regular.ttf');} 
+@font-face { font-family: Montserrat; font-weight: 700; src: url('../fonts/Montserrat-Bold.ttf');}
+@font-face { font-family: Montserrat; font-weight: 900; src: url('../fonts/Montserrat-Black.ttf');}
 
 html {
   box-sizing: border-box;
@@ -18,7 +15,7 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  font-family: Roboto, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
