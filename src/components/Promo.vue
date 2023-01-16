@@ -169,6 +169,7 @@
 
   .slide__text {
     grid-area: desc;
+    font-size: 1rem;
   }
 
   .slide__btn {

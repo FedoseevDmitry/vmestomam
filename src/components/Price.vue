@@ -169,11 +169,12 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 10vw;
+    width: max-content;
     margin: 0 auto;
     border-radius: 10px;
     background-color: $mainColor;
     color: #fff;
+    font-size: 1.2rem;
   }
 
   .price__btn:hover {

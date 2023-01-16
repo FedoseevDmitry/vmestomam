@@ -178,7 +178,7 @@
 
   .advantages__img {
     background-size: cover;
-    width: 70%;
+    width: 60%;
     border-radius: 5% 0 0 5%;
     background-position-x: center;
     background-position-y: center;
@@ -188,7 +188,7 @@
   .advantages__wrapper {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
-    width: 30%;
+    width: 40%;
     padding: 20px;
     gap: 30px;
   }
@@ -206,6 +206,11 @@
 
   .advantage__title {
     margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  .advantage__text {
+    font-size: 1rem;
   }
 
   .about__slider {
@@ -269,6 +274,7 @@
     top: -2vh;
     left: 50%;
     transform: rotate(180deg) translate(50%, 0);
+    z-index: -1;
   }
 
   .swiper-button-prev {

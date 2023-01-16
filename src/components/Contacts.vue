@@ -19,7 +19,8 @@
             <div class="item__wrapper">
               <h3 class="item__title">Адрес</h3>
 
-              <p class="item__text">Оккервиль, Областная ул. д. 1</p>
+              <p class="item__text">Оккервиль,</p>
+              <p class="item__text">Областная ул. д. 1</p>
             </div>
           </div>
 
@@ -72,9 +73,9 @@
   }
 
   .contacts__wrapper {
-    width: 70vw;
+    width: 80vw;
     position: absolute;
-    bottom: -10%;
+    bottom: -10vh;
     left: 50%;
     transform: translate(-50%, 0);
     background-color: $mainColor;
@@ -90,7 +91,7 @@
   }
 
   .block_left {
-    max-width: 30%;
+    width: 30%;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-right: 20px;
   }
@@ -131,11 +132,11 @@
   .item__title {
     margin-bottom: 10px;
     padding-top: 5px;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .item__text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: block;
   }
 

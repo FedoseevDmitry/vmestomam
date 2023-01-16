@@ -29,6 +29,7 @@
   .certificate__title {
     text-align: center;
     margin-bottom: 25px;
+    font-size: 1.8rem;
   }
 
   .certificate__wrapper {
@@ -41,25 +42,23 @@
   .certificate__info {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding-top: 50px;
+    // justify-content: space-around;
+    padding-top: 20px;
     padding-left: 50px;
-    max-width: 30%;
+    width: 40%;
   }
 
   .certificate__img {
-    max-width: 40vw;
+    width: max-content;
+    object-fit: contain;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
-  }
-
-  .certificate__title {
-    font-size: 1.8rem;
+    height: 40vh;
   }
 
   .certificate__text {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: justify;
+    margin-bottom: 10px;
   }
 
   .certificate__btn {
@@ -69,11 +68,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 10vw;
+    width: max-content;
     margin: 0 auto;
     border-radius: 10px;
     background-color: $mainColor;
     color: #fff;
+    font-size: 1.2rem;
   }
 
   .certificate__btn:hover {
