@@ -28,7 +28,10 @@
         <div class="item__block">
           <p class="item__text item__text_big">ЗНАКОМСТВО С VMESTOMAM:</p>
 
-          <h2 class="item__title">ПОДАРОК 20% НА ПЕРВОЕ ПОСЕЩЕНИЕ </h2>
+          <div class="item__title-wrapper">
+            <h2 class="item__title">ПОДАРОК 20%</h2>
+            <h2 class="item__title">НА ПЕРВОЕ ПОСЕЩЕНИЕ </h2>
+          </div>
 
           <a class="item__btn" href="http://wa.me/79119251310" target="_blank">Записаться</a>
         </div>
@@ -98,9 +101,9 @@
     content: '';
     position: absolute;
     background-color: #000;
-    left: 0;
+    left: 50%;
     top: 0;
-    width: 100vw;
+    width: 50vw;
     height: 100%;
     opacity: 0.6;
   }
@@ -115,7 +118,7 @@
   }
 
   .item {
-    width: 60vw;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -140,10 +143,13 @@
     justify-content: center;
   }
 
+  .item__title-wrapper {
+    grid-area: title;
+  }
+
   .item__title {
     font-size: 2.5rem;
     line-height: 2.5rem;
-    grid-area: title;
   }
 
   .item__text {

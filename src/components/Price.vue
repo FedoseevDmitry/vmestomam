@@ -35,6 +35,8 @@
         </div>
       </div>
 
+      <p class="price__description">* окончательная стоимость рассчитывается мастером при Вашем визите</p>
+
       <a class="price__btn" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Онлайн запись</a>
 
     </div>
@@ -56,29 +58,29 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
             title: 'Стрижки',
             showCategory: true,
             position: [
-              {name: 'Женская стрижка короткие волосы', price: '1000 руб.'},
-              {name: 'Женская стрижка среднюю длину', price: '1200 руб.'},
-              {name: 'Женская стрижка длинные волосы', price: '1400 руб.'},
+              {name: 'Женская стрижка, короткие', price: '1000 руб.'},
+              {name: 'Женская стрижка, средние', price: '1200 руб.'},
+              {name: 'Женская стрижка, длинные', price: '1400 руб.'},
               {name: 'Мужская стрижка', price: '800 руб.'},
               {name: 'Детская стрижка', price: '1400 руб.'},
             ]
           },
           coloring: {
-            title: 'Простое окрашивание',
+            title: 'Окрашивание в 1 тон*',
             showCategory: false,
             position: [
-              {name: 'Короткие волосы', price: 'от 2500 руб.'},
-              {name: 'Средняя длина', price: 'от 3000 руб.'},
-              {name: 'Длинные волосы', price: 'от 4000 руб.'},
+              {name: 'Короткие волосы', price: '2500 руб.'},
+              {name: 'Средняя длина', price: '3000 руб.'},
+              {name: 'Длинные волосы', price: '4000 руб.'},
             ]
           },
           makeup: {
-            title: 'Сложное окрашивание',
+            title: 'Сложное окрашивание*',
             showCategory: false,
             position: [
-              {name: 'Короткие волосы', price: 'от 5500 руб.'},
-              {name: 'Средняя длина', price: 'от 7000 руб.'},
-              {name: 'Длинные волосы', price: 'от 8500 руб.'},
+              {name: 'Короткие волосы', price: '6000 руб.'},
+              {name: 'Средняя длина', price: '7500 руб.'},
+              {name: 'Длинные волосы', price: '10000 руб.'},
             ]
           },
           manicure: {
@@ -159,7 +161,6 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     // border-radius: 20px;
     // box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
     display: grid;
-    margin-bottom: 25px;
     // padding: 20px;
   }
 
@@ -270,5 +271,13 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
   .title-span {
     position: absolute;
     left: -2%;
+  }
+
+  .price__description {
+    width: 60vw;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    opacity: 0.7;
+    font-size: 0.9rem;
   }
 </style>

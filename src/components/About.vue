@@ -27,6 +27,7 @@
           :slides-per-view="3"
           :loop="true"
           :space-between="150"
+          :allow-touch-move="false"
           :navigation="{
             prevEl: prev,
             nextEl: next,
@@ -43,6 +44,8 @@
 
               <div class="slide__text-wrapper">
                 <p class="slide__text">{{ review.desc }}</p>
+
+                <input class="slide__btn" type="checkbox">
               </div>
             </div>
           </swiper-slide>
@@ -69,7 +72,7 @@
     name: 'About',
     components: {
       Swiper,
-      SwiperSlide,
+      SwiperSlide
     },
     data () {
       return {
@@ -263,7 +266,6 @@
 
   .slide__text-wrapper {
     grid-area: desc;
-    padding: 10px;
     position: relative;
     background-color: $mainColor;
     color: #fff;
@@ -287,6 +289,42 @@
   .slide__text {
     font-size: 1rem;
     line-height: 1.4rem;
+    overflow: hidden;
+    padding: 10px;
+    --max-lines: 4;
+    --line-height: 1.4;
+    max-height: calc(var(--max-lines) * 1em * var(--line-height));
+    margin-bottom: 10px;
+  }
+
+  .slide__text:has(+ .slide__btn:checked) {
+    max-height: none;
+    transition: all ease-in-out .3s;
+  }
+
+  .slide__btn {
+    appearance: none;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 0 0 20px 20px;
+    cursor: pointer;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .slide__btn:before {
+    content: 'Развернуть полностью';
+  }
+
+  .slide__btn:checked:before {
+    content: 'Свернуть';
+  }
+
+  .slide__btn:hover {
+    background-color: $secondColor;
+    border-color: transparent;
   }
 
   .swiper-button-prev {

@@ -33,13 +33,19 @@
 
                   <h4 class="info-block__subtitle">{{ description.name }}</h4>
 
-                  <p class="info-block__text info-block__text_cross">{{ description.oldValue }}</p>
+                  <div class="info-block__text-wrapper" v-for="block in description.blocks" v-if="description.blocks">
+                    {{ block.item }}
 
-                  <p class="info-block__text">{{ description.newValue }}</p>
+                    <span class="info-block__text_cross">{{ block.oldValue }}</span>
+
+                    {{ block.newValue }}
+                  </div>
+
+                  <p class="info-block__text"></p>
                 </div>
               </div>
 
-              <a class="slide__btn" :href="slide.link" target="_blank" v-if="slide.link">Записаться</a>
+              <a class="slide__btn" :href="slide.link" target="_blank" v-if="slide.link"> {{  slide.linkText }}</a>
             </div>
           </swiper-slide>
         </swiper>
@@ -75,29 +81,68 @@
             title: 'Стрижки',
             subtitle: 'Будний день с 9.00 до 12.00',
             descriptions: [
-              {name: 'Женская', oldValue: '1000р./1200р./1400р.', newValue: '800р./1000р./1200р.'},
-              {name: 'Мужская', oldValue: '800р.', newValue: '600р.'},
-              {name: 'Детская', oldValue: '600р.', newValue: '500р.'},
+              {name: 'Женская', blocks: [
+                {item: 'короткие', oldValue: '1000', newValue: '800 руб.'},
+                {item: 'средние', oldValue: '1200', newValue: '1000 руб.'},
+                {item: 'длинные', oldValue: '1400', newValue: '1200 руб.'},
+              ]},
+              {name: 'Мужская', blocks: [
+                {item: '', oldValue: '1000', newValue: '800 руб.'},
+              ]},
+              {name: 'Детская', blocks: [
+                {item: '', oldValue: '1000', newValue: '800 руб.'},
+              ]},
             ],
-            link: 'http://wa.me/79119251310',
+            link: 'http://wa.me/79119251310?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5.',
+            linkText: 'Записаться онлайн'
           },
           secondSlide: {
             img: 'slide.jpg',
             title: 'Ногти',
             subtitle: 'Будний день с 9.00 до 12.00',
             descriptions: [
-              {title: 'ПАКЕТ МАНИКЮР + ПЕДИКЮР + покрытие гель/лак', name: 'у одного мастера', oldValue: '3900р.', newValue: '3500р.'},
-              {title: '', name: 'в 4 руки', oldValue: '4300р.', newValue: '3900р.'},
+              {title: 'Пакет маникюр + педикюр + покрытие гель/лак', blocks: [
+                {item: '', oldValue: '3900', newValue: '3500 руб.'},
+              ]},
+              {title: '', name: 'в 4 руки', blocks: [
+                {item: '', oldValue: '4300', newValue: '3900 руб.'},
+              ]},
             ],
-            link: 'http://wa.me/79119251310',
+            link: 'http://wa.me/79119251310?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5.',
+            linkText: 'Записаться онлайн'
           },
           thirdSlide: {
             img: 'slide.jpg',
             title: '-20% на день рождения',
             descriptions: [
-              {name: 'Действует однократно на услугу или комплекс услуг в любой день месяца', oldValue: '', newValue: ''},
+              {name: 'Действует однократно на услугу или комплекс услуг в любой день месяца', blocks: [
+                {item: '', oldValue: '', newValue: ''},
+              ]},
             ],
-            link: '',
+            link: 'http://wa.me/79119251310?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5.',
+            linkText: 'Подробнее'
+          },
+          fourthSlide: {
+            img: 'slide.jpg',
+            title: 'Акции месяца',
+            descriptions: [
+              {name: 'Самые выгодные актуальные предложения на услуги', blocks: [
+                {item: '', oldValue: '', newValue: ''},
+              ]},
+            ],
+            link: 'http://wa.me/79119251310?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5.',
+            linkText: 'Подробнее'
+          },
+          fifthSlide: {
+            img: 'slide.jpg',
+            title: 'День бренда',
+            descriptions: [
+              {name: 'Скидки на услуги и товары бренда, консультации приглашенных технологов, подарки и угощения', blocks: [
+                {item: '', oldValue: '', newValue: ''},
+              ]},
+            ],
+            link: 'http://wa.me/79119251310?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5.',
+            linkText: 'Подробнее'
           },
         },
       }
@@ -182,6 +227,10 @@
     justify-content: center;
     text-transform: uppercase;
     margin-bottom: 5px;
+  }
+
+  .slide__subtitle {
+    font-size: 1rem;
   }
 
   .slide__info-block {
