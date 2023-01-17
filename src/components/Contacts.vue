@@ -19,7 +19,7 @@
             <div class="item__wrapper">
               <h3 class="item__title">Адрес</h3>
 
-              <p class="item__text">Оккервиль,</p>
+              <p class="item__text">СПб, Кудрово,</p>
               <p class="item__text">Областная ул. д. 1</p>
             </div>
           </div>

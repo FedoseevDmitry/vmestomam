@@ -2,31 +2,47 @@
   <swiper
     :speed="1000"
     :slides-per-view="1"
-    :autoplay="autoplay"
     :loop="true"
+    :no-swiping="true"
+    :allow-touch-move="false"
     @swiper="onSwiper"
     @slideChange="onSlideChange"
     class="slider"
   >
-    <swiper-slide class="slider__slide slide">
-      <img class="slide__img" src="../assets/images/header-slider/slide-1.jpg" alt="Изображение" width="1920" height="1080">
+    <swiper-slide class="slider">
+      <div class="slider__image-wrapper">
+        <img class="slider__image" src="../assets/images/header-slider/slide-2.jpg" alt="Изображение" width="1920" height="1080">
+      </div>
 
-      <!-- <div class="slide__wrapper">
-        <h2 class="slide__title">Заголовок</h2>
+      <div class="slider__wrapper item">
+        <div class="item__block">
+          <p class="item__text item__text_big">СТУДИЯ СЕМЕЙНОЙ КРАСОТЫ</p>
 
-        <p class="slide__text">Тут можно разместить какой-нибудь текст, например </p>
+          <h2 class="item__title">VMESTOMAM</h2>
 
-        <button class="slide__btn">И кнопку</button>
-      </div> -->
+          <p class="item__text">с детской комнатой и няней</p>
+
+          <a class="item__btn" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Записаться онлайн</a>
+        </div>
+
+        <div class="item__block">
+          <p class="item__text item__text_big">ЗНАКОМСТВО С VMESTOMAM:</p>
+
+          <h2 class="item__title">ПОДАРОК 20% НА ПЕРВОЕ ПОСЕЩЕНИЕ </h2>
+
+          <a class="item__btn" href="http://wa.me/79119251310" target="_blank">Записаться</a>
+        </div>
+       
+      </div>
     </swiper-slide>
 
-    <swiper-slide>
+    <!-- <swiper-slide>
       <img class="slide__img" src="../assets/images/header-slider/slide-2.jpg" alt="Изображение" width="1920" height="1080">
     </swiper-slide>
 
     <swiper-slide>
       <img class="slide__img" src="../assets/images/header-slider/slide-3.jpg" alt="Изображение" width="1920" height="1080">
-    </swiper-slide>
+    </swiper-slide> -->
   </swiper>
 </template>
 
@@ -65,15 +81,104 @@
 </script>
 
 <style scoped lang="scss">
-  .slide {
+  $mainColor: #694f38;
+  $secondColor: #58b6ac;
+
+  .slider {
     position: relative;
+    height: 100%;
   }
 
-  .slide__wrapper {
+  .slider__image-wrapper {
+    position: relative;
+    display: flex;
+  }
+
+  .slider:after {
+    content: '';
+    position: absolute;
+    background-color: #000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    opacity: 0.6;
+  }
+
+  .slider__wrapper {
     position: absolute;
     z-index: 100;
-    top: 40%;
-    right: 30%;
+    top: 30%;
+    left: 50%;
     color: #fff;
+    transform: translate(-50%, 0);
+  }
+
+  .item {
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .item__block {
+    display: grid;
+    grid-template-rows: 50px 100px 70px 40px;
+    grid-template-areas: 
+    "subtitle"
+    "title"
+    "desc"
+    "btn";
+    width: 50%;
+    text-align: center;
+  }
+
+  .item__title,
+  .item__text_big {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item__title {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    grid-area: title;
+  }
+
+  .item__text {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    grid-area: desc;
+  }
+
+  .item__text_big {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    grid-area: subtitle;
+  }
+
+  .item__btn {
+    padding: 10px;
+    grid-area: btn;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    border: 1px solid #fff;
+  }
+
+  .item__btn:hover {
+    background-color: $secondColor;
+    transition: all ease-in-out .3s;
+    box-shadow: none;
+    transform: scale(1.1);
+    border: none;
   }
 </style>

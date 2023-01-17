@@ -1,6 +1,7 @@
 <template>
   <Header/>
   <main>
+    <SignUp/>
     <Slider/>
     <Promo/>
     <Price/>
@@ -13,6 +14,7 @@
 
 <script>
 import Header from './components/Header.vue'
+import SignUp from './components/SignUp.vue'
 import Slider from './components/Slider.vue'
 import Promo from './components/Promo.vue'
 import Price from './components/Price.vue'
@@ -25,6 +27,7 @@ export default {
   name: 'App',
   components: {
     Header,
+    SignUp,
     Slider,
     Promo,
     Price,

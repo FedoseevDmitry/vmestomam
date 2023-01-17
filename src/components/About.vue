@@ -7,37 +7,15 @@
         <div class="advantages__img"></div>
 
         <div class="advantages__wrapper">
-          <div class="advantage">
-          <img class="advantage__img" src="../assets/images/checked.png" alt="Иконка">
+          <div class="advantage" v-for="advantage in advantages">
+            <div class="advantage__img-wrapper">
+             <img class="advantage__img" :src="getImgUrl(advantage.img)" alt="Иконка">
+            </div>
 
-          <h3 class="advantage__title">Преимущество 1</h3>
+            <h3 class="advantage__title">{{ advantage.title }}</h3>
 
-          <p class="advantage__text">Описание преимущества</p>
-        </div>
-
-        <div class="advantage">
-          <img class="advantage__img" src="../assets/images/checked.png" alt="Иконка">
-
-          <h3 class="advantage__title">Преимущество 2</h3>
-
-          <p class="advantage__text">Описание преимущества</p>
-        </div>
-
-        <div class="advantage">
-          <img class="advantage__img" src="../assets/images/checked.png" alt="Иконка">
-
-          <h3 class="advantage__title">Преимущество 3</h3>
-
-          <p class="advantage__text">Описание преимущества</p>
-        </div>
-
-        <div class="advantage">
-          <img class="advantage__img" src="../assets/images/checked.png" alt="Иконка">
-
-          <h3 class="advantage__title">Преимущество 4</h3>
-
-          <p class="advantage__text">Описание преимущества</p>
-        </div>
+            <p class="advantage__text">{{ advantage.desc }}</p>
+          </div>
         </div>
       </div>
 
@@ -57,50 +35,14 @@
           @slideChange="onSlideChange"
           class="about__slider"
         >
-          <swiper-slide class="slider__slide">
+          <swiper-slide class="slider__slide" v-for="review in reviews">
             <div class="slide__wrapper">
-              <img class="slide__img" src="../assets/images/about-slider/woman.png" alt="Изображение человека">
+              <img class="slide__img" :src="getImgUrl(review.img)" alt="Изображение человека">
 
-              <h4 class="slide__title">Имя Фамилия 1</h4>
+              <h4 class="slide__title">{{ review.fullname }}</h4>
 
               <div class="slide__text-wrapper">
-                <p class="slide__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, iure?</p>
-              </div>
-            </div>
-          </swiper-slide>
-
-          <swiper-slide class="slider__slide">
-            <div class="slide__wrapper">
-              <img class="slide__img" src="../assets/images/about-slider/man.png" alt="Изображение человека">
-
-              <h4 class="slide__title">Имя Фамилия 2</h4>
-
-              <div class="slide__text-wrapper">
-                <p class="slide__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum veniam sed beatae doloribus natus repellat!</p>
-              </div>
-            </div>
-          </swiper-slide>
-
-          <swiper-slide class="slider__slide">
-            <div class="slide__wrapper">
-              <img class="slide__img" src="../assets/images/about-slider/woman.png" alt="Изображение человека">
-
-              <h4 class="slide__title">Имя Фамилия 3</h4>
-
-              <div class="slide__text-wrapper">
-                <p class="slide__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla veritatis impedit inventore.</p>
-              </div>
-            </div>
-          </swiper-slide>
-
-          <swiper-slide class="slider__slide">
-            <div class="slide__wrapper">
-              <img class="slide__img" src="../assets/images/about-slider/woman.png" alt="Изображение человека">
-
-              <h4 class="slide__title">Имя Фамилия 4</h4>
-
-              <div class="slide__text-wrapper">
-                <p class="slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus autem laudantium quasi magni quod repellat ipsam!</p>
+                <p class="slide__text">{{ review.desc }}</p>
               </div>
             </div>
           </swiper-slide>
@@ -131,11 +73,56 @@
     },
     data () {
       return {
-        // autoplay: {
-        //   delay: 5000,
-        //   disableOnInteraction: false
-        // }
+        advantages: {
+          kidsRoom: {
+            img: 'kids.png',
+            title: 'Детская комната',
+            desc: 'Ваш ребёнок с удовольствием проведёт время в нашей детской, при необходимости можно заказать няню.',
+          },
+          masters: {
+            img: 'masters.png',
+            title: 'Мастера',
+            desc: 'Наши мастера имеют опыт работы от 3х лет и регулярно повышают свою квалификацию.',
+          },
+          sterilize: {
+            img: 'sterilize.png',
+            title: 'Стерильность',
+            desc: 'Мы обеспечиваем безопасность Вашего здоровья выполняя все требования и нормы СЭС и СанПин.',
+          },
+          guarantee: {
+            img: 'guarantee.png',
+            title: 'Гарантия',
+            desc: 'У нас действует гарантийный срок на покрытие 5 дней со дня оказания услуги.',
+          },
+        },
+        reviews: {
+          first: {
+            img: 'woman.png',
+            fullname: 'Ольга К.',
+            desc: 'Наш любимый салон! Все мастера, к которым мы попадали, профессиональные, вежливые, внимательные и аккуратные. Любимый мастер-парикмахер - Мария Рензина - очень приятная, мягкая, с ней комфортно, настоящий профессионал. В итоге - у нас всегда хорошая стрижка, красивое окрашивание и прекрасное настроение после визита к ней)). Отдельную благодарность хочется выразить администратору Елене - это Душа салона, вежливая, внимательная, всегда подберет максимально удобное время посещения, угостит вкусным капучино, проконсультирует по всем услугам салона. В салоне есть прекрасная детская комната с няней (няни тоже замечательные), благодаря чему посещение салона с детьми проходит с удовольствием и с комфортом для всех. Мы всей семьёй очень любим этот салон и всем искренне его рекомендуем! Посещаем его уже несколько лет. ',
+          },
+          second: {
+            img: 'woman.png',
+            fullname: 'Анастасия П.',
+            desc: 'Самое теплое и уютное место в Оккервиле. Гуманный ценник, всегда вежливый персонал. Администратор- богиня, знает все женские желания))) Очень нравится мастер Мария, ручки золотые,всегда сдедает так, как мне хочется))) и все время попадает в точку)) чудесные окрашивания❤',
+          },
+          third: {
+            img: 'woman.png',
+            fullname: 'Юля Л.',
+            desc: 'Очень нравится салон! Ходим всей семьей с открытия. Мастера маникюра Татьяна и Сима - самые лучшие! Качественный маникюр и делают именно то, что надо и хочется. Парикмахеры Настя и Нуне тоже самые лучшие! В целом в салоне нравится сервис и хорошее отношение к клиенту! Большое спасибо! Развивайтесь дальше и радуйте нас своим высоким качеством!',
+          },
+          fourth: {
+            img: 'woman.png',
+            fullname: 'Анастасия Б.',
+            desc: 'Хожу в салон Вместомам на маникюр, педикюр давно, всегда довольна, мастера прекрасные. Часто делаю процедуры в 4 руки, очень экономит время. Большой плюс, что в салоне есть детская комната, прихожу иногда с детьми, они с няней играют, я навожу красоту.',
+          },
+        }
       }
+    },
+    methods: {
+      getImgUrl(picture) {
+        return require('../assets/images/' + picture);
+      },
     },
     setup() {
       const next = ref(null);
@@ -169,6 +156,7 @@
     font-size: 1.8rem;
   }
 
+  // ADVANTAGES
   .advantages {
     display: flex;
     margin-bottom: 50px;
@@ -190,18 +178,36 @@
     grid-template: 1fr 1fr / 1fr 1fr;
     width: 40%;
     padding: 20px;
-    gap: 30px;
   }
 
   .advantage {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+  }
+
+  .advantage:nth-child(odd) {
+    border-right: 1px solid rgba(1, 1, 1, 0.1);
+  }
+
+  .advantage:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+  }
+
+  .advantage__img-wrapper {
+    background-color: $secondColor;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .advantage__img {
     max-width: 64px;
-    margin-bottom: 25px;
   }
 
   .advantage__title {
@@ -211,6 +217,7 @@
 
   .advantage__text {
     font-size: 1rem;
+    text-align: center;
   }
 
   .about__slider {
@@ -275,6 +282,11 @@
     left: 50%;
     transform: rotate(180deg) translate(50%, 0);
     z-index: -1;
+  }
+
+  .slide__text {
+    font-size: 1rem;
+    line-height: 1.4rem;
   }
 
   .swiper-button-prev {

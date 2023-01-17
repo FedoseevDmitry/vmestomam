@@ -17,51 +17,29 @@
           @slideChange="onSlideChange"
           class="promo__slider"
         >
-          <swiper-slide class="slider__slide slide">
+          <swiper-slide class="slider__slide slide" v-for="slide in slides">
             <div class="slide__wrapper">
-              <img class="slide__img slide__img_first-slide" src="../assets/images/promo-slider/slide.jpg" alt="Изображение акции">
+              <img class="slide__img slide__img_first-slide" :src="getImgUrl(slide.img)" alt="Изображение акции">
 
-              <h3 class="slide__title">Название акции 1</h3>
+              <div class="slide__header-block">
+                <h3 class="slide__title">{{ slide.title }}</h3>
 
-              <p class="slide__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, iure?</p>
+                <p class="slide__subtitle">{{ slide.subtitle }}</p>
+              </div>
 
-              <a class="slide__btn" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Онлайн запись</a>
-            </div>
-          </swiper-slide>
+              <div class="slide__info-block info-block">
+                <div class="info-block__text-wrapper" v-for="description in slide.descriptions">
+                  <h4 class="info-block__title"> {{ description.title  }}</h4>
 
-          <swiper-slide class="slider__slide slide">
-            <div class="slide__wrapper">
-              <img class="slide__img slide__img_second-slide" src="../assets/images/promo-slider/slide.jpg" alt="Изображение акции">
+                  <h4 class="info-block__subtitle">{{ description.name }}</h4>
 
-              <h3 class="slide__title">Название акции 2</h3>
+                  <p class="info-block__text info-block__text_cross">{{ description.oldValue }}</p>
 
-              <p class="slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, dolorum.</p>
+                  <p class="info-block__text">{{ description.newValue }}</p>
+                </div>
+              </div>
 
-              <a class="slide__btn" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Онлайн запись</a>
-            </div>
-          </swiper-slide>
-
-          <swiper-slide class="slider__slide slide">
-            <div class="slide__wrapper">
-              <img class="slide__img slide__img_third-slide" src="../assets/images/promo-slider/slide.jpg" alt="Изображение акции">
-
-              <h3 class="slide__title">Название акции 3</h3>
-
-              <p class="slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ipsum?</p>
-
-              <a class="slide__btn" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Онлайн запись</a>
-            </div>
-          </swiper-slide>
-
-          <swiper-slide class="slider__slide slide">
-            <div class="slide__wrapper">
-              <img class="slide__img slide__img_fourth-slide" src="../assets/images/promo-slider/slide.jpg" alt="Изображение акции">
-
-              <h3 class="slide__title">Название акции 4</h3>
-
-              <p class="slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quos libero eveniet modi dolores fuga molestiae possimus ex error ea?</p>
-
-              <a class="slide__btn" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Онлайн запись</a>
+              <a class="slide__btn" :href="slide.link" target="_blank" v-if="slide.link">Записаться</a>
             </div>
           </swiper-slide>
         </swiper>
@@ -91,11 +69,43 @@
     },
     data () {
       return {
-        // autoplay: {
-        //   delay: 5000,
-        //   disableOnInteraction: false
-        // }
+        slides: {
+          firstSlide: {
+            img: 'slide.jpg',
+            title: 'Стрижки',
+            subtitle: 'Будний день с 9.00 до 12.00',
+            descriptions: [
+              {name: 'Женская', oldValue: '1000р./1200р./1400р.', newValue: '800р./1000р./1200р.'},
+              {name: 'Мужская', oldValue: '800р.', newValue: '600р.'},
+              {name: 'Детская', oldValue: '600р.', newValue: '500р.'},
+            ],
+            link: 'http://wa.me/79119251310',
+          },
+          secondSlide: {
+            img: 'slide.jpg',
+            title: 'Ногти',
+            subtitle: 'Будний день с 9.00 до 12.00',
+            descriptions: [
+              {title: 'ПАКЕТ МАНИКЮР + ПЕДИКЮР + покрытие гель/лак', name: 'у одного мастера', oldValue: '3900р.', newValue: '3500р.'},
+              {title: '', name: 'в 4 руки', oldValue: '4300р.', newValue: '3900р.'},
+            ],
+            link: 'http://wa.me/79119251310',
+          },
+          thirdSlide: {
+            img: 'slide.jpg',
+            title: '-20% на день рождения',
+            descriptions: [
+              {name: 'Действует однократно на услугу или комплекс услуг в любой день месяца', oldValue: '', newValue: ''},
+            ],
+            link: '',
+          },
+        },
       }
+    },
+    methods: {
+      getImgUrl(picture) {
+        return require('../assets/images/promoSlider/' + picture);
+      },
     },
     setup() {
       const next = ref(null);
@@ -139,17 +149,19 @@
   .slide {
     width: 20vw;
     box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
+    border-radius: 20px;
   }
 
   .slide__wrapper {
     display: grid;
     text-align: center;
-    grid-template: 400px 50px 80px 50px/repeat(2, 1fr);
+    grid-template-rows: 300px 50px 200px 50px;
+    row-gap: 10px;
     grid-template-areas: 
-    "image image"
-    "title title"
-    "desc desc"
-    "btn btn";
+    "image"
+    "header"
+    "body"
+    "btn";
   }
 
   .slide__img {
@@ -157,19 +169,38 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .slide__header-block {
+    grid: header;
   }
 
   .slide__title {
-    grid-area: title;
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
+    margin-bottom: 5px;
   }
 
-  .slide__text {
-    grid-area: desc;
+  .slide__info-block {
+    grid-area: body;
+  }
+
+  .info-block__text-wrapper {
     font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .info-block__title {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+  }
+
+  .info-block__text_cross {
+    text-decoration: line-through;
   }
 
   .slide__btn {
@@ -181,6 +212,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6);
+    border-radius: 0 0 20px 20px;
   }
 
   .slide__btn:hover {

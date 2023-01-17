@@ -9,8 +9,6 @@
             <p class="header__title">Услуга</p>
 
             <p class="header__text">Стоимость</p>
-
-            <p class="header__text">Длительность</p>
           </div>
         </div>
 
@@ -30,7 +28,6 @@
                 <li class="category__item item" v-for="position in category.position">
                   <h4 class="item__title">{{ position.name }}</h4> 
                   <p class="item__text">{{ position.price }}</p>
-                  <p class="item__text">{{ position.duration }}</p>
                 </li>
               </ul>
             </collapse-transition>
@@ -56,80 +53,88 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
       return {
         categories: {
           haircuts: {
-            title: 'Стрижка',
-            showCategory: false,
+            title: 'Стрижки',
+            showCategory: true,
             position: [
-              {name: 'Женская на короткие волосы', price: '1000 р.', duration: '1 час'},
-              {name: 'Женская на среднюю длину', price: '1200 р.', duration: '1 час'},
-              {name: 'Женская на длинные волосы', price: '1400 р.', duration: '1 час'},
-              {name: 'Мужская модельная', price: '800 р.', duration: '1 час'},
-              {name: 'Мужская с двумя насадками', price: '500 р.', duration: '1 час'},
-              {name: 'Детская модельная', price: '600 р.', duration: '1 час'},
-              {name: 'Детская выстриг', price: 'от 50 р.', duration: '1 час'},
+              {name: 'Женская стрижка короткие волосы', price: '1000 руб.'},
+              {name: 'Женская стрижка среднюю длину', price: '1200 руб.'},
+              {name: 'Женская стрижка длинные волосы', price: '1400 руб.'},
+              {name: 'Мужская стрижка', price: '800 руб.'},
+              {name: 'Детская стрижка', price: '1400 руб.'},
             ]
           },
           coloring: {
-            title: 'Окрашивание волос',
+            title: 'Простое окрашивание',
             showCategory: false,
             position: [
-              {name: 'test12', price: '300 р.', duration: '1 час'},
-              {name: 'test13', price: '400 р.', duration: '1 час'}
+              {name: 'Короткие волосы', price: 'от 2500 руб.'},
+              {name: 'Средняя длина', price: 'от 3000 руб.'},
+              {name: 'Длинные волосы', price: 'от 4000 руб.'},
             ]
           },
           makeup: {
-            title: 'Макияж и укладка',
+            title: 'Сложное окрашивание',
             showCategory: false,
             position: [
-              {name: 'test12', price: '300 р.', duration: '1 час'},
-              {name: 'test13', price: '400 р.', duration: '1 час'}
+              {name: 'Короткие волосы', price: 'от 5500 руб.'},
+              {name: 'Средняя длина', price: 'от 7000 руб.'},
+              {name: 'Длинные волосы', price: 'от 8500 руб.'},
             ]
           },
           manicure: {
             title: 'Маникюр',
             showCategory: false,
             position: [
-              {name: 'test12', price: '300 р.', duration: '1 час'},
-              {name: 'test13', price: '400 р.', duration: '1 час'}
+              {name: 'Маникюр без покрытия', price: '750 руб.'},
+              {name: 'Маникюр + гель/лак + снятие', price: '1600 руб.'},
+              {name: 'Мужской маникюр без покрытия', price: '850 руб.'},
             ]
           },
           pedicure: {
             title: 'Педикюр',
             showCategory: false,
             position: [
-              {name: 'test12', price: '300 р.', duration: '1 час'},
-              {name: 'test13', price: '400 р.', duration: '1 час'}
+              {name: 'Педикюр без покрытия', price: '2100 руб.'},
+              {name: 'Педикюр + гель/лак + снятие', price: '2500 руб.'},
+              {name: 'Мужской педикюр без покрытия', price: '2300 руб.'},
             ]
           },
           eyebrows: {
             title: 'Брови',
             showCategory: false,
             position: [
-              {name: 'test12', price: '300 р.', duration: '1 час'},
-              {name: 'test13', price: '400 р.', duration: '1 час'}
+              {name: 'Коррекция', price: '500 руб.'},
+              {name: 'Коррекция + окрашивание краской', price: '800 руб.'},
+              {name: 'Коррекция + окрашивание хной', price: '1000 руб.'},
+              {name: 'Ламинирование', price: '2000 руб.'},
             ]
           },
           eyelashes: {
             title: 'Ресницы',
             showCategory: false,
             position: [
-              {name: 'test12', price: '300 р.', duration: '1 час'},
-              {name: 'test13', price: '400 р.', duration: '1 час'}
+              {name: 'Окрашивание', price: '300 руб.'},
+              {name: 'Ламинирование', price: '2000 руб.'},
+              {name: 'Наращивание', price: 'от 2200 руб.'},
             ]
           },
           shugaring: {
             title: 'Шугаринг',
             showCategory: false,
             position: [
-              {name: 'test12', price: '300 р.', duration: '1 час'},
-              {name: 'test13', price: '400 р.', duration: '1 час'}
+              {name: 'Зона подмышки', price: '400 руб.'},
+              {name: 'Ноги выше или до колена', price: '900 руб.'},
+              {name: 'Ноги полностью', price: '1700 руб.'},
+              {name: 'Бикини по линии трусиков', price: '800 руб.'},
+              {name: 'Бикини глубокое', price: '1500 руб.'},
             ]
           },
           nanny: {
             title: 'Няня',
             showCategory: false,
             position: [
-              {name: 'test12', price: '300 р.', duration: '1 час'},
-              {name: 'test13', price: '400 р.', duration: '1 час'}
+              {name: 'Бесплатно при услугах от', price: '3000 руб.'},
+              {name: 'В остальных случаях', price: '200 руб/час'}
             ]
           },
         }
@@ -193,10 +198,13 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     width: 60vw;
     margin: 0 auto;
     font-size: 1.2rem;
+    text-transform: uppercase;
   }
 
   .header__title {
     font-weight: 400;
+    text-align: start;
+    padding-left: 10%;
   }
 
   .price__category-wrapper {
@@ -219,11 +227,12 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     // margin-bottom: 10px;
     display: grid;
     cursor: pointer;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 3fr 1fr;
     text-align: start;
     border-bottom: 1px solid #e6e6e6;
     font-weight: 400;
     position: relative;
+    text-transform: uppercase;
   }
 
   .category__title:hover {
@@ -234,7 +243,7 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
   .item,
   .header {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 3fr 1fr;
     text-align: center;
   }
 

@@ -22,7 +22,7 @@
             <div class="header__item-wrapper">
               <p class="header__text">Ждем Вас</p>
                 
-              <p class="header__text header__text_big">Оккервиль, Областная ул. д. 1</p>
+              <p class="header__text header__text_big">СПб, Кудрово, Областная д. 1</p>
             </div>
           </div>
         </div>
@@ -56,26 +56,26 @@
 
           <div class="header__social-wrapper social">
             <ul class="social__list">
-              <li class="social__item">
+              <!-- <li class="social__item">
                 <a class="social__link" href="https://www.instagram.com/vmestomam/">
                   <img class="social__img" src="../assets/images/instagram.svg" alt="Иконка Инстаграма">
                 </a>
-              </li>
+              </li> -->
 
               <li class="social__item">
-                <a class="social__link" href="http://vk.com/vmestomam">
+                <a class="social__link" href="http://vk.com/vmestomam" target="_blank">
                   <img class="social__img" src="../assets/images/vk.svg" alt="Иконка ВКонтакте">
                 </a>
               </li>
 
               <li class="social__item">
-                <a class="social__link" href="https://t.me/s/vmestomam">
+                <a class="social__link" href="https://t.me/s/vmestomam" target="_blank">
                   <img class="social__img" src="../assets/images/telegram.svg" alt="Иконка Телеграма">
                 </a>
               </li>
 
               <li class="social__item">
-                <a class="social__link" href="http://wa.me/79119251310">
+                <a class="social__link" href="http://wa.me/79119251310" target="_blank">
                   <img class="social__img" src="../assets/images/whatsapp.svg" alt="Иконка Ватсапа">
                 </a>
               </li>
