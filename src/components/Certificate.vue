@@ -7,7 +7,7 @@
         <div class="certificate__info">
           <h2 class="certificate__title">Подарочный сертификат</h2>
 
-          <p class="certificate__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, tempora expedita voluptatibus corporis ad magnam culpa necessitatibus quae nisi voluptatem, commodi neque odio perferendis impedit minima totam dolor aperiam porro omnis harum inventore fugit possimus provident. Nihil, dolor. Fugiat nam ullam quis. Deserunt harum accusantium doloremque rem aperiam esse aut.</p>
+          <p class="certificate__text">В нашей студии Вы можете приобрести подарочные сертификаты любого номинала. Стильный и полезный подарок станет отличным решением для подарка.</p>
 
           <a class="certificate__btn" href="http://wa.me/79119251310" target="_blank">Узнать больше</a>
         </div>

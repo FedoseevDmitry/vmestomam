@@ -9,6 +9,7 @@
           :slides-per-view="3"
           :loop="true"
           :space-between="150"
+          :allow-touch-move="false"
           :navigation="{
             prevEl: prev,
             nextEl: next,
@@ -45,7 +46,9 @@
                 </div>
               </div>
 
-              <a class="slide__btn" :href="slide.link" target="_blank" v-if="slide.link"> {{  slide.linkText }}</a>
+              <div class="slide__btn-wrapper">
+                <a class="slide__btn" :href="slide.link" target="_blank" v-if="slide.link"> {{  slide.linkText }}</a>
+              </div>
             </div>
           </swiper-slide>
         </swiper>
@@ -77,7 +80,7 @@
       return {
         slides: {
           firstSlide: {
-            img: 'slide.jpg',
+            img: 'haircut.jpg',
             title: 'Стрижки',
             subtitle: 'Будний день с 9.00 до 12.00',
             descriptions: [
@@ -87,21 +90,21 @@
                 {item: 'длинные', oldValue: '1400', newValue: '1200 руб.'},
               ]},
               {name: 'Мужская', blocks: [
-                {item: '', oldValue: '1000', newValue: '800 руб.'},
+                {item: '', oldValue: '800', newValue: '600 руб.'},
               ]},
               {name: 'Детская', blocks: [
-                {item: '', oldValue: '1000', newValue: '800 руб.'},
+                {item: '', oldValue: '600', newValue: '500 руб.'},
               ]},
             ],
             link: 'http://wa.me/79119251310?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5.',
             linkText: 'Записаться онлайн'
           },
           secondSlide: {
-            img: 'slide.jpg',
-            title: 'Ногти',
+            img: 'manicure.jpg',
+            title: 'Пакет маникюр + педикюр + гель/лак',
             subtitle: 'Будний день с 9.00 до 12.00',
             descriptions: [
-              {title: 'Пакет маникюр + педикюр + покрытие гель/лак', blocks: [
+              {title: '', name:'у одного мастера', blocks: [
                 {item: '', oldValue: '3900', newValue: '3500 руб.'},
               ]},
               {title: '', name: 'в 4 руки', blocks: [
@@ -112,10 +115,10 @@
             linkText: 'Записаться онлайн'
           },
           thirdSlide: {
-            img: 'slide.jpg',
+            img: 'happyb.jpg',
             title: '-20% на день рождения',
             descriptions: [
-              {name: 'Действует однократно на услугу или комплекс услуг в любой день месяца', blocks: [
+              {title: 'Действует однократно на услугу или комплекс услуг в любой день месяца', name: '', blocks: [
                 {item: '', oldValue: '', newValue: ''},
               ]},
             ],
@@ -123,10 +126,10 @@
             linkText: 'Подробнее'
           },
           fourthSlide: {
-            img: 'slide.jpg',
+            img: 'monthpromo.jpg',
             title: 'Акции месяца',
             descriptions: [
-              {name: 'Самые выгодные актуальные предложения на услуги', blocks: [
+              {title: 'Самые выгодные актуальные предложения на услуги', name: '', blocks: [
                 {item: '', oldValue: '', newValue: ''},
               ]},
             ],
@@ -134,10 +137,10 @@
             linkText: 'Подробнее'
           },
           fifthSlide: {
-            img: 'slide.jpg',
+            img: 'brand.jpg',
             title: 'День бренда',
             descriptions: [
-              {name: 'Скидки на услуги и товары бренда, консультации приглашенных технологов, подарки и угощения', blocks: [
+              {title: 'Скидки на услуги и товары бренда, консультации приглашенных технологов, подарки и угощения', name: '', blocks: [
                 {item: '', oldValue: '', newValue: ''},
               ]},
             ],
@@ -200,7 +203,7 @@
   .slide__wrapper {
     display: grid;
     text-align: center;
-    grid-template-rows: 300px 50px 200px 50px;
+    grid-template-rows: 300px 70px 200px 60px;
     row-gap: 10px;
     grid-template-areas: 
     "image"
@@ -226,11 +229,15 @@
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+    margin: 0 auto;
     margin-bottom: 5px;
+    color: $secondColor;
+    max-width: 80%;
   }
 
   .slide__subtitle {
     font-size: 1rem;
+    text-transform: uppercase;
   }
 
   .slide__info-block {
@@ -243,31 +250,63 @@
   }
 
   .info-block__title {
-    width: 80%;
+    // width: 80%;
     margin: 0 auto;
     margin-bottom: 5px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .info-block__subtitle {
+    text-transform: uppercase;
   }
 
   .info-block__text_cross {
     text-decoration: line-through;
   }
 
+  // .slide__btn {
+  //   padding: 10px;
+  //   position: relative;
+  //   grid-area: btn;
+  //   color: #000;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6);
+  //   border-radius: 0 0 20px 20px;
+  // }
+
+  // .slide__btn:hover {
+  //   background-color: $secondColor;
+  //   transition: all ease-in-out .3s;
+  //   box-shadow: none;
+  // }
+
+  .slide__btn-wrapper {
+    grid-area: btn;
+    display: flex;
+    padding-left: 20px;
+  }
+
   .slide__btn {
     padding: 10px;
-    position: relative;
-    grid-area: btn;
-    color: #000;
+    color: #fff;
     display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6);
-    border-radius: 0 0 20px 20px;
+    align-items: center;
+    border-radius: 20px;
+    max-width: 50%;
+    max-height: 50%;
+    background-color: $secondColor;
   }
 
   .slide__btn:hover {
     background-color: $secondColor;
     transition: all ease-in-out .3s;
     box-shadow: none;
+    color: #fff;
+    transform: scale(1.1);
   }
 
   .swiper-button-prev {

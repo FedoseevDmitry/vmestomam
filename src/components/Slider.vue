@@ -89,7 +89,7 @@
 
   .slider {
     position: relative;
-    height: 100%;
+    height: 70vh;
   }
 
   .slider__image-wrapper {

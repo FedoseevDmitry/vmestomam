@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5, p, figure, fieldset {
   margin: 0;
 }
 
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+}
+
 fieldset {
   border: none;
   padding: 0;

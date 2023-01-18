@@ -26,7 +26,7 @@
             <collapse-transition>
               <ul class="category__list" v-show="category.showCategory">
                 <li class="category__item item" v-for="position in category.position">
-                  <h4 class="item__title">{{ position.name }}</h4> 
+                  <p class="item__title">{{ position.name }}</p> 
                   <p class="item__text">{{ position.price }}</p>
                 </li>
               </ul>
@@ -62,7 +62,7 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
               {name: 'Женская стрижка, средние', price: '1200 руб.'},
               {name: 'Женская стрижка, длинные', price: '1400 руб.'},
               {name: 'Мужская стрижка', price: '800 руб.'},
-              {name: 'Детская стрижка', price: '1400 руб.'},
+              {name: 'Детская стрижка', price: '600 руб.'},
             ]
           },
           coloring: {
@@ -87,9 +87,9 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
             title: 'Маникюр',
             showCategory: false,
             position: [
-              {name: 'Маникюр без покрытия', price: '750 руб.'},
+              {name: 'Маникюр без покрытия', price: '850 руб.'},
               {name: 'Маникюр + гель/лак + снятие', price: '1600 руб.'},
-              {name: 'Мужской маникюр без покрытия', price: '850 руб.'},
+              {name: 'Мужской маникюр без покрытия', price: '950 руб.'},
             ]
           },
           pedicure: {

@@ -45,7 +45,12 @@
               <div class="slide__text-wrapper">
                 <p class="slide__text">{{ review.desc }}</p>
 
-                <input class="slide__btn" type="checkbox">
+                <collapse-transition>
+                  <p class="slide__text_full" v-show="review.show">{{ review.showMore }}</p>
+                </collapse-transition>
+
+                <button class="slide__btn" @click="review.show = !review.show" v-if="!review.show">Показать полностью</button>
+                <button class="slide__btn" @click="review.show = !review.show" v-if="review.show">Скрыть</button>
               </div>
             </div>
           </swiper-slide>
@@ -65,6 +70,7 @@
   import 'swiper/css';
   import 'swiper/css/navigation';
   import { ref } from "vue";
+  import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTransition.vue'
 
   SwiperCore.use([Navigation]);
 
@@ -72,7 +78,8 @@
     name: 'About',
     components: {
       Swiper,
-      SwiperSlide
+      SwiperSlide,
+      CollapseTransition
     },
     data () {
       return {
@@ -102,22 +109,30 @@
           first: {
             img: 'woman.png',
             fullname: 'Ольга К.',
-            desc: 'Наш любимый салон! Все мастера, к которым мы попадали, профессиональные, вежливые, внимательные и аккуратные. Любимый мастер-парикмахер - Мария Рензина - очень приятная, мягкая, с ней комфортно, настоящий профессионал. В итоге - у нас всегда хорошая стрижка, красивое окрашивание и прекрасное настроение после визита к ней)). Отдельную благодарность хочется выразить администратору Елене - это Душа салона, вежливая, внимательная, всегда подберет максимально удобное время посещения, угостит вкусным капучино, проконсультирует по всем услугам салона. В салоне есть прекрасная детская комната с няней (няни тоже замечательные), благодаря чему посещение салона с детьми проходит с удовольствием и с комфортом для всех. Мы всей семьёй очень любим этот салон и всем искренне его рекомендуем! Посещаем его уже несколько лет. ',
+            desc: 'Наш любимый салон! Все мастера, к которым мы попадали, профессиональные, вежливые, внимательные и аккуратные. Любимый мастер-парикмахер - Мария Рензина - очень ',
+            show: false,
+            showMore: 'приятная, мягкая, с ней комфортно, настоящий профессионал. В итоге - у нас всегда хорошая стрижка, красивое окрашивание и прекрасное настроение после визита к ней)). Отдельную благодарность хочется выразить администратору Елене - это Душа салона, вежливая, внимательная, всегда подберет максимально удобное время посещения, угостит вкусным капучино, проконсультирует по всем услугам салона. В салоне есть прекрасная детская комната с няней (няни тоже замечательные), благодаря чему посещение салона с детьми проходит с удовольствием и с комфортом для всех. Мы всей семьёй очень любим этот салон и всем искренне его рекомендуем! Посещаем его уже несколько лет.'
           },
           second: {
             img: 'woman.png',
             fullname: 'Анастасия П.',
-            desc: 'Самое теплое и уютное место в Оккервиле. Гуманный ценник, всегда вежливый персонал. Администратор- богиня, знает все женские желания))) Очень нравится мастер Мария, ручки золотые,всегда сдедает так, как мне хочется))) и все время попадает в точку)) чудесные окрашивания❤',
+            desc: 'Самое теплое и уютное место в Оккервиле. Гуманный ценник, всегда вежливый персонал. Администратор- богиня, знает все женские желания))) Очень нравится мастер',
+            show: false,
+            showMore: ' Мария, ручки золотые,всегда сдедает так, как мне хочется))) и все время попадает в точку)) чудесные окрашивания❤'
           },
           third: {
             img: 'woman.png',
             fullname: 'Юля Л.',
-            desc: 'Очень нравится салон! Ходим всей семьей с открытия. Мастера маникюра Татьяна и Сима - самые лучшие! Качественный маникюр и делают именно то, что надо и хочется. Парикмахеры Настя и Нуне тоже самые лучшие! В целом в салоне нравится сервис и хорошее отношение к клиенту! Большое спасибо! Развивайтесь дальше и радуйте нас своим высоким качеством!',
+            desc: 'Очень нравится салон! Ходим всей семьей с открытия. Мастера маникюра Татьяна и Сима - самые лучшие! Качественный маникюр и делают именно то, что надо и хочется. ',
+            show: false,
+            showMore: 'Парикмахеры Настя и Нуне тоже самые лучшие! В целом в салоне нравится сервис и хорошее отношение к клиенту! Большое спасибо! Развивайтесь дальше и радуйте нас своим высоким качеством!'
           },
           fourth: {
             img: 'woman.png',
             fullname: 'Анастасия Б.',
-            desc: 'Хожу в салон Вместомам на маникюр, педикюр давно, всегда довольна, мастера прекрасные. Часто делаю процедуры в 4 руки, очень экономит время. Большой плюс, что в салоне есть детская комната, прихожу иногда с детьми, они с няней играют, я навожу красоту.',
+            desc: 'Хожу в салон Вместомам на маникюр, педикюр давно, всегда довольна, мастера прекрасные. Часто делаю процедуры в 4 руки, очень экономит время. Большой плюс,',
+            show: false,
+            showMore: ' что в салоне есть детская комната, прихожу иногда с детьми, они с няней играют, я навожу красоту.'
           },
         }
       }
@@ -148,6 +163,7 @@
 <style scoped lang="scss">
   $mainColor: #694f38;
   $secondColor: #58b6ac;
+  $newBgColor: #e2e2e2;
 
   .about__title {
     margin-bottom: 25px;
@@ -163,14 +179,13 @@
   .advantages {
     display: flex;
     margin-bottom: 50px;
-    background-color: $mainColor;
-    color: #fff;
+    background-color: $newBgColor;
+    color: #000;
   }
 
   .advantages__img {
     background-size: cover;
     width: 60%;
-    border-radius: 5% 0 0 5%;
     background-position-x: center;
     background-position-y: center;
     background-image: url('../assets/images/header-slider/slide-1.jpg');
@@ -262,13 +277,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000;
   }
 
   .slide__text-wrapper {
     grid-area: desc;
     position: relative;
-    background-color: $mainColor;
-    color: #fff;
+    background-color: $newBgColor;
+    color: #000;
     border-radius: 20px;
   }
 
@@ -278,7 +294,7 @@
     height: 0;
     border-left: 2vh solid transparent;
     border-right: 2vh solid transparent;
-    border-top: 3vh solid $mainColor;
+    border-top: 3vh solid $newBgColor;
     position: absolute;
     top: -2vh;
     left: 50%;
@@ -288,43 +304,35 @@
 
   .slide__text {
     font-size: 1rem;
-    line-height: 1.4rem;
-    overflow: hidden;
     padding: 10px;
-    --max-lines: 4;
-    --line-height: 1.4;
-    max-height: calc(var(--max-lines) * 1em * var(--line-height));
-    margin-bottom: 10px;
+    padding-bottom: 0;
   }
 
-  .slide__text:has(+ .slide__btn:checked) {
+  .slide__text_full {
+    font-size: 1rem;
+    overflow: unset;
     max-height: none;
-    transition: all ease-in-out .3s;
   }
 
   .slide__btn {
-    appearance: none;
-    padding: 10px;
-    background-color: transparent;
+    background-color: $mainColor;
     border-radius: 0 0 20px 20px;
-    cursor: pointer;
-    margin: 0 auto;
+    border: none;
     color: #fff;
-    font-size: 1rem;
+    margin-top: 5px;
+    max-width: 100%;
     width: 100%;
-  }
-
-  .slide__btn:before {
-    content: 'Развернуть полностью';
-  }
-
-  .slide__btn:checked:before {
-    content: 'Свернуть';
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6);
   }
 
   .slide__btn:hover {
     background-color: $secondColor;
     border-color: transparent;
+    box-shadow: none;
   }
 
   .swiper-button-prev {
