@@ -22,7 +22,8 @@
             <div class="header__item-wrapper">
               <p class="header__text">Ждем Вас</p>
                 
-              <p class="header__text header__text_big">СПб, Кудрово, Областная д. 1</p>
+              <p class="header__text header__text_big">СПб., м. Дыбенко,</p>
+              <p class="header__text header__text_big">Кудрово, Областная ул. д.1, арка 10</p>
             </div>
           </div>
         </div>
@@ -118,11 +119,12 @@ export default {
   .header__info-wrapper {
     display: flex;
     column-gap: 10px;
+    padding-top: 10px;
   }
 
   .header__module-wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     column-gap: 10px;
   }
 

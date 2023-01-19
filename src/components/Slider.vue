@@ -89,7 +89,6 @@
 
   .slider {
     position: relative;
-    height: 70vh;
   }
 
   .slider__image-wrapper {
@@ -115,6 +114,11 @@
     left: 50%;
     color: #fff;
     transform: translate(-50%, 0);
+  }
+
+  .slider__image {
+    height: 70vh;
+    object-fit: cover;
   }
 
   .item {

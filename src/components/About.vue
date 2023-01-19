@@ -188,14 +188,15 @@
     width: 60%;
     background-position-x: center;
     background-position-y: center;
-    background-image: url('../assets/images/header-slider/slide-1.jpg');
+    background-repeat: no-repeat;
+    background-image: url('../assets/images/about.jpg');
   }
 
   .advantages__wrapper {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     width: 40%;
-    padding: 20px;
+    padding: 0 20px;
   }
 
   .advantage {
@@ -214,8 +215,8 @@
   }
 
   .advantage__img-wrapper {
+    margin-bottom: 5px;
     background-color: $secondColor;
-    margin-bottom: 20px;
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -229,7 +230,7 @@
   }
 
   .advantage__title {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-size: 1.2rem;
   }
 
@@ -333,6 +334,7 @@
     background-color: $secondColor;
     border-color: transparent;
     box-shadow: none;
+    transform: none;
   }
 
   .swiper-button-prev {

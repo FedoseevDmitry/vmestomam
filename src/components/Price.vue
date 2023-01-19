@@ -35,7 +35,8 @@
         </div>
       </div>
 
-      <p class="price__description">* окончательная стоимость рассчитывается мастером при Вашем визите</p>
+      <p class="price__description">* окончательная стоимость рассчитывается мастером при Вашем визите.</p>
+      <p class="price__description">** в комплексе со стрижкой или окрашиванием будет дешевле.</p>
 
       <a class="price__btn" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Онлайн запись</a>
 
@@ -74,13 +75,26 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
               {name: 'Длинные волосы', price: '4000 руб.'},
             ]
           },
-          makeup: {
+          hardColoring: {
             title: 'Сложное окрашивание*',
             showCategory: false,
             position: [
               {name: 'Короткие волосы', price: '6000 руб.'},
               {name: 'Средняя длина', price: '7500 руб.'},
               {name: 'Длинные волосы', price: '10000 руб.'},
+            ]
+          },
+          hairCare: {
+            title: 'Уходы для волос**',
+            showCategory: false,
+            position: [
+              {name: 'Восстановление К18 + маска для домашнего ухода', price: '3000 руб.'},
+              {name: 'Восстановление BOND FUSION, средние', price: '1200 руб.'},
+              {name: 'Восстановление BOND FUSION, длинные', price: '1500 руб.'},
+              {name: 'Ламинирование SHOT, средние', price: '1200 руб.'},
+              {name: 'Ламинирование SHOT, длинные', price: '1500 руб.'},
+              {name: 'Ботокс HONMA TOKIO, средние', price: '3500 руб.'},
+              {name: 'Ботокс HONMA TOKIO, длинные', price: '4500 руб.'},
             ]
           },
           manicure: {
@@ -276,8 +290,11 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
   .price__description {
     width: 60vw;
     margin: 0 auto;
-    margin-bottom: 25px;
     opacity: 0.7;
     font-size: 0.9rem;
+  }
+
+  .price__description:last-of-type {
+    margin-bottom: 25px;
   }
 </style>

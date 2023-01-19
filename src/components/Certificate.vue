@@ -28,8 +28,10 @@
 
   .certificate__title {
     text-align: center;
+    margin: 0 auto;
     margin-bottom: 25px;
     font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .certificate__wrapper {

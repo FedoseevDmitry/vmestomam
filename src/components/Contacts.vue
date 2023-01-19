@@ -19,8 +19,8 @@
             <div class="item__wrapper">
               <h3 class="item__title">Адрес</h3>
 
-              <p class="item__text">СПб, Кудрово,</p>
-              <p class="item__text">Областная ул. д. 1</p>
+              <p class="item__text">СПб., м. Дыбенко,</p>
+              <p class="item__text">Кудрово, Областная ул. д.1, арка 10</p>
             </div>
           </div>
 
