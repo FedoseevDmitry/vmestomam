@@ -187,9 +187,9 @@
     background-size: cover;
     width: 60%;
     background-position-x: center;
-    background-position-y: center;
+    background-position-y: 20%;
     background-repeat: no-repeat;
-    background-image: url('../assets/images/about.jpg');
+    background-image: url('../assets/images/header-slider/slide-6.jpg');
   }
 
   .advantages__wrapper {

@@ -11,18 +11,18 @@
   >
     <swiper-slide class="slider">
       <div class="slider__image-wrapper">
-        <img class="slider__image" src="../assets/images/header-slider/slide-2.jpg" alt="Изображение" width="1920" height="1080">
+        <img class="slider__image" src="../assets/images/header-slider/slide-0.jpg" alt="Изображение" width="1920" height="1080">
       </div>
 
       <div class="slider__wrapper item">
-        <div class="item__block">
+        <div class="item__block item__block_black">
           <p class="item__text item__text_big">СТУДИЯ СЕМЕЙНОЙ КРАСОТЫ</p>
 
           <h2 class="item__title">VMESTOMAM</h2>
 
           <p class="item__text">с детской комнатой и няней</p>
 
-          <a class="item__btn" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Записаться онлайн</a>
+          <a class="item__btn item__btn_black" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Записаться онлайн</a>
         </div>
 
         <div class="item__block">
@@ -33,7 +33,7 @@
             <h2 class="item__title">НА ПЕРВОЕ ПОСЕЩЕНИЕ </h2>
           </div>
 
-          <a class="item__btn" href="http://wa.me/79119251310" target="_blank">Записаться</a>
+          <a class="item__btn" href="http://wa.me/79119251310?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5." target="_blank">Записаться</a>
         </div>
        
       </div>
@@ -140,6 +140,10 @@
     text-align: center;
   }
 
+  .item__block_black {
+    color: #000;
+  }
+
   .item__title,
   .item__text_big {
     display: flex;
@@ -184,11 +188,17 @@
     border: 1px solid #fff;
   }
 
+  .item__btn_black {
+    color: #000;
+    border-color: #000;
+  }
+
   .item__btn:hover {
     background-color: $secondColor;
     transition: all ease-in-out .3s;
     box-shadow: none;
     transform: scale(1.1);
     border: none;
+    color: #fff;
   }
 </style>
