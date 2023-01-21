@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" id="contacts">
     <div class="container">
       <div class="contacts">
         <iframe class="contacts__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.9392795286494!2d30.504037716172817!3d59.91655507084187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46962e7c0c2717f9%3A0xcf8cf85ecbd4646!2z0KHRgtGD0LTQuNGPINC60YDQsNGB0L7RgtGLICJ2TWVzdG9NYW0i!5e0!3m2!1sru!2sru!4v1673809557983!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
