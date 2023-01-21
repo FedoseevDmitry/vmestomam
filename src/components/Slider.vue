@@ -173,6 +173,7 @@
     font-size: 1.2rem;
     line-height: 1.2rem;
     grid-area: desc;
+    font-weight: 600;
   }
 
   .item__text_big {
@@ -195,6 +196,7 @@
     color: #fff;
     font-size: 1.2rem;
     border: 1px solid #fff;
+    font-weight: 400;
   }
 
   .item__btn_black {
