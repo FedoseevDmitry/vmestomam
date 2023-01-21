@@ -6,7 +6,6 @@
     <Promo/>
     <Price/>
     <About/>
-    <Contacts/>
     <Certificate/>
   </main>
   <Footer/>
@@ -19,7 +18,6 @@ import Slider from './components/Slider.vue'
 import Promo from './components/Promo.vue'
 import Price from './components/Price.vue'
 import About from './components/About.vue'
-import Contacts from './components/Contacts.vue'
 import Certificate from './components/Certificate.vue'
 import Footer from './components/Footer.vue'
 
@@ -32,13 +30,12 @@ export default {
     Promo,
     Price,
     About,
-    Contacts,
     Certificate,
     Footer
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
 </style>

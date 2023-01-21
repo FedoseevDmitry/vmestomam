@@ -38,8 +38,6 @@
         >
           <swiper-slide class="slider__slide" v-for="review in reviews">
             <div class="slide__wrapper">
-              <img class="slide__img" :src="getImgUrl(review.img)" alt="Изображение человека">
-
               <h4 class="slide__title">{{ review.fullname }}</h4>
 
               <div class="slide__text-wrapper">
@@ -60,6 +58,8 @@
 
         <div ref="next" class="swiper-button-next"></div>
       </div>
+
+      <a class="advantages__btn" href="https://yandex.ru/maps/org/vmestomam/1501364459/reviews" target="_blank">Смотреть все отзывы</a>
     </div>
   </section>
 </template>
@@ -258,9 +258,8 @@
   .slide__wrapper {
     display: grid;
     text-align: center;
-    grid-template: 128px 50px 1fr/repeat(2, 1fr);
+    grid-template: 50px 1fr/1fr;
     grid-template-areas: 
-    "image image"
     "title title"
     "desc desc";
   }
@@ -287,6 +286,7 @@
     background-color: $newBgColor;
     color: #000;
     border-radius: 20px;
+    margin-bottom: 20px;
   }
 
   .slide__text-wrapper:before {
@@ -345,5 +345,27 @@
   .swiper-button-next {
     right: -100px;
     color: $secondColor;
+  }
+
+  .advantages__btn {
+    padding: 10px;
+    grid-area: btn;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: $mainColor;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+
+  .advantages__btn:hover {
+    background-color: $secondColor;
+    transition: all ease-in-out .3s;
+    box-shadow: none;
+    transform: scale(1.1);
   }
 </style>

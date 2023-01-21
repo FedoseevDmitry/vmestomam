@@ -11,7 +11,8 @@
   >
     <swiper-slide class="slider">
       <div class="slider__image-wrapper">
-        <img class="slider__image" src="../assets/images/header-slider/slide-0.jpg" alt="Изображение" width="1920" height="1080">
+        <div class="slider__image"></div>
+        <!-- <img class="slider__image" src="../assets/images/header-slider/slide-7.jpg" alt="Изображение" width="1920" height="1080"> -->
       </div>
 
       <div class="slider__wrapper item">
@@ -116,9 +117,17 @@
     transform: translate(-50%, 0);
   }
 
+  // .slider__image {
+  //   height: 70vh;
+  //   object-fit: cover;
+  // }
+
   .slider__image {
-    height: 70vh;
-    object-fit: cover;
+    background-image: url(..//assets/images/header-slider/slide-7.jpg);
+    height: 60vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 0% 35%;
   }
 
   .item {

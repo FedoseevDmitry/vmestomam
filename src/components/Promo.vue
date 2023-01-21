@@ -115,10 +115,10 @@
             linkText: 'Подробнее'
           },
           thirdSlide: {
-            img: 'happyb.jpg',
-            title: '-20% на день рождения',
+            img: 'monthpromo.jpg',
+            title: 'Акции месяца',
             descriptions: [
-              {title: 'Действует однократно на услугу или комплекс услуг в любой день месяца', name: '', blocks: [
+              {title: 'Самые выгодные актуальные предложения на услуги', name: '', blocks: [
                 {item: '', oldValue: '', newValue: ''},
               ]},
             ],
@@ -126,10 +126,10 @@
             linkText: 'Подробнее'
           },
           fourthSlide: {
-            img: 'monthpromo.jpg',
-            title: 'Акции месяца',
+            img: 'happyb.jpg',
+            title: '-20% на день рождения',
             descriptions: [
-              {title: 'Самые выгодные актуальные предложения на услуги', name: '', blocks: [
+              {title: 'Действует однократно на услугу или комплекс услуг в любой день месяца', name: '', blocks: [
                 {item: '', oldValue: '', newValue: ''},
               ]},
             ],
@@ -255,6 +255,7 @@
     margin-bottom: 5px;
     font-weight: 400;
     text-transform: uppercase;
+    max-width: 70%;
   }
 
   .info-block__subtitle {

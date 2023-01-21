@@ -22,8 +22,8 @@
             <div class="header__item-wrapper">
               <p class="header__text">Ждем Вас</p>
                 
-              <p class="header__text header__text_big">СПб., м. Дыбенко,</p>
-              <p class="header__text header__text_big">Кудрово, Областная ул. д.1, арка 10</p>
+              <a class="header__text header__link header__text_big" href="https://yandex.ru/maps/org/vmestomam/1501364459/" target="_blank">СПб., м. ул. Дыбенко,</a>
+              <a class="header__text header__link header__text_big" href="https://yandex.ru/maps/org/vmestomam/1501364459/" target="_blank">Кудрово, Областная ул. д.1, арка 10</a>
             </div>
           </div>
         </div>
@@ -46,11 +46,11 @@
               </li>
 
               <li class="nav__item">
-                <a class="nav__link" href="#contacts">Контакты</a>
+                <a class="nav__link" href="#certificate">Сертификат</a>
               </li>
 
               <li class="nav__item">
-                <a class="nav__link" href="#certificate">Сертификат</a>
+                <a class="nav__link" href="#contacts">Контакты</a>
               </li>
             </ul>
           </nav>
