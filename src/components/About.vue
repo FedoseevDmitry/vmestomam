@@ -28,6 +28,7 @@
           :loop="true"
           :space-between="150"
           :allow-touch-move="false"
+          :breakpoints="breakpoints"
           :navigation="{
             prevEl: prev,
             nextEl: next,
@@ -44,7 +45,7 @@
                 <p class="slide__text">{{ review.desc }}</p>
 
                 <collapse-transition>
-                  <p class="slide__text_full" v-show="review.show">{{ review.showMore }}</p>
+                  <p class="slide__text slide__text_full" v-show="review.show">{{ review.showMore }}</p>
                 </collapse-transition>
 
                 <button class="slide__btn" @click="review.show = !review.show" v-if="!review.show">Показать полностью</button>
@@ -83,6 +84,12 @@
     },
     data () {
       return {
+        breakpoints: {
+          1620: {slidesPerView: 3, spaceBetween: 100},
+          1264: {slidesPerView: 3, spaceBetween: 50},
+          900: {slidesPerView: 2, spaceBetween: 50},
+          600: {slidesPerView: 2, spaceBetween: 20},
+        },
         advantages: {
           kidsRoom: {
             img: 'kids.png',
@@ -169,10 +176,26 @@
     margin-bottom: 25px;
     text-align: center;
     font-size: 2rem;
+
+    @media (max-width: 1100px) {
+      font-size: 1.7rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: 1.5rem;
+    }
   }
 
   .about__title_small {
     font-size: 1.8rem;
+
+    @media (max-width: 1100px) {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: 1.3em;
+    }
   }
 
   // ADVANTAGES
@@ -190,13 +213,28 @@
     background-position-y: 20%;
     background-repeat: no-repeat;
     background-image: url('../assets/images/header-slider/slide-6.jpg');
+
+    @media (max-width: 1100px) {
+      width: 50%;
+    }
+
+    @media (max-width: 860px) {
+      width: 40%;
+    }
   }
 
   .advantages__wrapper {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     width: 40%;
-    padding: 0 20px;
+
+    @media (max-width: 1100px) {
+      width: 50%;
+    }
+
+    @media (max-width: 860px) {
+      width: 60%;
+    }
   }
 
   .advantage {
@@ -204,6 +242,10 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
+
+    @media (max-width: 1400px) {
+      padding: 5px;
+    }
   }
 
   .advantage:nth-child(odd) {
@@ -223,20 +265,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 1400px) {
+      width: 72px;
+      height: 72px;
+    }
+
+    @media (max-width: 860px) {
+      width: 56px;
+      height: 56px;
+    }
   }
 
   .advantage__img {
     max-width: 64px;
+
+    @media (max-width: 1400px) {
+      max-width: 48px;
+    }
+
+    @media (max-width: 860px) {
+      max-width: 32px;
+    }
   }
 
   .advantage__title {
     margin-bottom: 5px;
     font-size: 1.2rem;
+
+    @media (max-width: 1400px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: .9rem;
+    }
   }
 
   .advantage__text {
     font-size: 1rem;
     text-align: center;
+
+    @media (max-width: 1400px) {
+      font-size: .9rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: .8rem;
+    }
   }
 
   .about__slider {
@@ -258,10 +334,14 @@
   .slide__wrapper {
     display: grid;
     text-align: center;
-    grid-template: 50px 1fr/1fr;
+    grid-template-rows: 50px 1fr;
     grid-template-areas: 
-    "title title"
-    "desc desc";
+    "title"
+    "desc";
+
+    @media (max-width: 860px) {
+      grid-template-rows: 30px 1fr;
+    }
   }
 
   .slide__img {
@@ -278,6 +358,7 @@
     align-items: center;
     justify-content: center;
     color: #000;
+    font-size: 1rem;
   }
 
   .slide__text-wrapper {
@@ -307,12 +388,26 @@
     font-size: 1rem;
     padding: 10px;
     padding-bottom: 0;
+
+    @media (max-width: 1100px) {
+      padding: 5px;
+      padding-bottom: 0;
+    }
+
+    @media (max-width: 860px) {
+      font-size: .9rem;
+    }
   }
 
   .slide__text_full {
     font-size: 1rem;
     overflow: unset;
     max-height: none;
+    padding-top: 0;
+
+    @media (max-width: 860px) {
+      font-size: .9rem;
+    }
   }
 
   .slide__btn {
@@ -328,6 +423,11 @@
     padding-bottom: 10px;
     display: flex;
     box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6);
+    font-size: 1rem;
+
+    @media (max-width: 860px) {
+      font-size: .9rem;
+    }
   }
 
   .slide__btn:hover {
@@ -335,16 +435,6 @@
     border-color: transparent;
     box-shadow: none;
     transform: none;
-  }
-
-  .swiper-button-prev {
-    left: -100px;
-    color: $secondColor;
-  }
-
-  .swiper-button-next {
-    right: -100px;
-    color: $secondColor;
   }
 
   .advantages__btn {
@@ -360,6 +450,10 @@
     background-color: $mainColor;
     color: #fff;
     font-size: 1.2rem;
+
+    @media (max-width: 860px) {
+      font-size: 1rem;
+    }
   }
 
   .advantages__btn:hover {

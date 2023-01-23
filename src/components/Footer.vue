@@ -28,7 +28,7 @@
               <div class="item__wrapper">
                 <h3 class="item__title">Записаться</h3>
 
-                <a class="item__text item__link" href="tel:+78126035313">603-53-13</a>
+                <a class="item__text item__link" href="tel:+78126035313">+7 (812) 603-53-13</a>
 
                 <a class="item__text item__link" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Онлайн</a>
               </div>
@@ -74,6 +74,10 @@
     max-width: 80vw;
     margin: 0 auto;
     margin-bottom: 10px;
+
+    @media (max-width: 1100px) {
+      max-width: 90%;
+    }
   }
 
   .footer__wrapper {
@@ -89,13 +93,29 @@
 
   .contacts__map {
     width: 50%;
-    height: 40vh;
+    height: 400px;
     border-radius: 20px;
+
+    @media (max-width: 1400px) {
+      height: 350px;
+    }
+
+    @media (max-width: 1100px) {
+      height: 330px;
+    }
+
+    @media (max-width: 860px) {
+      height: 290px;
+    }
   }
 
   .contacts__block:first-child {
     margin-bottom: 20px;
     padding-top: 20px;
+
+    @media (max-width: 1100px) {
+      margin-bottom: 0;
+    }
   }
 
   .contacts__wrapper {
@@ -115,6 +135,14 @@
     margin-bottom: 20px;
     font-size: 1.8rem;
     text-align: center;
+
+    @media (max-width: 1100px) {
+      font-size: 1.7rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: 1.5rem;
+    }
   }
 
   .block__text {
@@ -123,32 +151,56 @@
 
   .item {
     display: flex;
-    // align-items: center;
     gap: 10px;
     margin: 0 auto;
     width: 50%;
     margin-bottom: 10px;
+
+    @media (max-width: 1400px) {
+      width: 70%;
+    }
+
+    @media (max-width: 860px) {
+      width: 90%;
+    }
   }
 
   .item__img {
     width: 32px;
     height: 32px;
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(113deg) brightness(103%) contrast(102%);
+
+    @media (max-width: 860px) {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   .item__title {
     margin-bottom: 10px;
-    padding-top: 5px;
     font-size: 1rem;
+
+    @media (max-width: 860px) {
+      margin-bottom: 5px;
+      font-size: .9rem;
+    }
   }
 
   .item__text {
     font-size: 0.9rem;
     display: block;
+
+    @media (max-width: 860px) {
+      font-size: .8rem;
+    }
   }
 
   .item__text:not(:last-child) {
     margin-bottom: 5px;
+
+    @media (max-width: 860px) {
+      margin-bottom: 0;
+    }
   }
 
   .item__link:hover {

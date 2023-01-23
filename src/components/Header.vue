@@ -12,7 +12,7 @@
             <div class="header__item-wrapper">
               <p class="header__text">Записаться</p>
 
-              <a class="header__text header__link" href="tel:+78126035313">603-53-13</a>
+              <a class="header__text header__link" href="tel:+78126035313">+7 (812) 603-53-13</a>
             </div>
           </div>
 
@@ -89,8 +89,13 @@
 </template>
 
 <script>
+import { Slide } from 'vue3-burger-menu'
+
 export default {
   name: 'Header',
+  components: {
+    Slide
+  }
 }
 </script>
 
@@ -110,10 +115,19 @@ export default {
     margin: 0 auto;
     margin-bottom: 10px;
     justify-content: space-between;
+
+    @media (max-width: 1400px) {
+      width: 95vw;
+    }
   }
 
   .header__logo {
     max-width: 280px;
+    object-fit: contain;
+
+    @media (max-width: 860px) {
+      max-width: 220px;
+    }
   }
 
   .header__info-wrapper {
@@ -126,11 +140,22 @@ export default {
     display: flex;
     align-items: flex-start;
     column-gap: 10px;
+
+    @media (max-width: 860px) {
+      column-gap: 5px;
+    }
   }
 
   .header__img {
     width: 32px;
-    height: 32px;
+
+    @media (max-width: 1100px) {
+      width: 24px;
+    }
+
+    @media (max-width: 860px) {
+      width: 16px;
+    }
   }
 
   .header__item-wrapper {
@@ -140,12 +165,28 @@ export default {
 
   .header__text {
     font-size: .9rem;
+
+    @media (max-width: 1100px) {
+      font-size: .8rem;
+    }
   }
 
   .header__link,
   .header__text_big {
     font-size: 1.2rem;
     font-weight: 700;
+
+    @media (max-width: 1400px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 1100px) {
+      font-size: .9rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: .8rem;
+    }
   }
 
   .header__link:hover,
@@ -169,12 +210,18 @@ export default {
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
+    width: 60%;
+    justify-content: space-between;
+
+    @media (max-width: 1100px) {
+      width: 70%;
+    }
   }
 
   .nav__list {
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    width: 50vw;
   }
 
   .nav__item {
@@ -199,6 +246,18 @@ export default {
 
   .nav__link {
     color: #fff;
+
+    @media (max-width: 1400px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 1100px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: .9rem;
+    }
   }
 
   //SOCIAL
@@ -214,8 +273,11 @@ export default {
 
   .social__img {
     width: 32px;
-    height: 32px;
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(113deg) brightness(103%) contrast(102%);
+
+    @media (max-width: 1100px) {
+      width: 24px;
+    }
   }
 
   .social__img:hover {

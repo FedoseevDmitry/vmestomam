@@ -169,13 +169,18 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
   .price__title {
     text-align: center;
     margin-bottom: 25px;
+
+    @media (max-width: 1100px) {
+      font-size: 1.7rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: 1.5rem;
+    }
   }
 
   .price__wrapper {
-    // border-radius: 20px;
-    // box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
     display: grid;
-    // padding: 20px;
   }
 
   .price__header-wrapper {
@@ -195,6 +200,10 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     background-color: $mainColor;
     color: #fff;
     font-size: 1.2rem;
+
+    @media (max-width: 860px) {
+      font-size: 1rem;
+    }
   }
 
   .price__btn:hover {
@@ -205,15 +214,17 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
   }
 
   .header {
-    // background-color: $mainColor;
-    // border-radius: 20px 20px 0 0;
     padding-top: 10px;
     padding-bottom: 10px;
     color: #fff;
-    width: 60vw;
+    width: 70%;
     margin: 0 auto;
     font-size: 1.2rem;
     text-transform: uppercase;
+
+    @media (max-width: 860px) {
+      width: 90%;
+    }
   }
 
   .header__title {
@@ -223,8 +234,12 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
   }
 
   .price__category-wrapper {
-    width: 60vw;
+    width: 70%;
     margin: 0 auto;
+
+    @media (max-width: 860px) {
+      width: 90%;
+    }
   }
 
   .category {
@@ -239,7 +254,6 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
   }
 
   .category__title {
-    // margin-bottom: 10px;
     display: grid;
     cursor: pointer;
     grid-template-columns: 3fr 1fr;
@@ -248,6 +262,7 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     font-weight: 400;
     position: relative;
     text-transform: uppercase;
+    font-size: 1.2rem;
   }
 
   .category__title:hover {
@@ -285,13 +300,25 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
   .title-span {
     position: absolute;
     left: -2%;
+
+    @media (max-width: 1400px) {
+      left: -3%;
+    }
+
+    @media (max-width: 860px) {
+      left: -4%;
+    }
   }
 
   .price__description {
-    width: 60vw;
+    width: 70%;
     margin: 0 auto;
     opacity: 0.7;
     font-size: 0.9rem;
+
+    @media (max-width: 860px) {
+      width: 90%;
+    }
   }
 
   .price__description:last-of-type {

@@ -12,26 +12,30 @@
     <swiper-slide class="slider">
       <div class="slider__image-wrapper">
         <div class="slider__image"></div>
-        <!-- <img class="slider__image" src="../assets/images/header-slider/slide-7.jpg" alt="Изображение" width="1920" height="1080"> -->
       </div>
 
       <div class="slider__wrapper item">
         <div class="item__block item__block_black">
-          <p class="item__text item__text_big">СТУДИЯ СЕМЕЙНОЙ КРАСОТЫ</p>
+          <div class="item__block-text">
+            <p class="item__text item__text_big">СТУДИЯ СЕМЕЙНОЙ КРАСОТЫ</p>
 
-          <h2 class="item__title">VMESTOMAM</h2>
+            <h2 class="item__title">VMESTOMAM</h2>
 
-          <p class="item__text">с детской комнатой и няней</p>
+            <p class="item__text">с детской комнатой и няней</p>
+          </div>
 
           <a class="item__btn item__btn_black" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Записаться онлайн</a>
         </div>
 
         <div class="item__block">
-          <p class="item__text item__text_big">ЗНАКОМСТВО С VMESTOMAM:</p>
 
-          <div class="item__title-wrapper">
-            <h2 class="item__title">ПОДАРОК 20%</h2>
-            <h2 class="item__title">НА ПЕРВОЕ ПОСЕЩЕНИЕ </h2>
+          <div class="item__block-text">
+            <p class="item__text item__text_big">ЗНАКОМСТВО С VMESTOMAM:</p>
+
+            <div class="item__title-wrapper">
+              <h2 class="item__title">ПОДАРОК 20%</h2>
+              <h2 class="item__title item__title_second">НА ПЕРВОЕ ПОСЕЩЕНИЕ </h2>
+            </div>
           </div>
 
           <a class="item__btn" href="http://wa.me/79119251310?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5." target="_blank">Записаться</a>
@@ -39,14 +43,6 @@
        
       </div>
     </swiper-slide>
-
-    <!-- <swiper-slide>
-      <img class="slide__img" src="../assets/images/header-slider/slide-2.jpg" alt="Изображение" width="1920" height="1080">
-    </swiper-slide>
-
-    <swiper-slide>
-      <img class="slide__img" src="../assets/images/header-slider/slide-3.jpg" alt="Изображение" width="1920" height="1080">
-    </swiper-slide> -->
   </swiper>
 </template>
 
@@ -97,13 +93,24 @@
     display: flex;
   }
 
+  .slider__image-wrapper:after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
   .slider:after {
     content: '';
     position: absolute;
     background-color: #000;
     left: 50%;
     top: 0;
-    width: 50vw;
+    width: 50%;
     height: 100%;
     opacity: 0.6;
   }
@@ -117,17 +124,26 @@
     transform: translate(-50%, 0);
   }
 
-  // .slider__image {
-  //   height: 70vh;
-  //   object-fit: cover;
-  // }
-
   .slider__image {
     background-image: url(..//assets/images/header-slider/slide-7.jpg);
-    height: 60vh;
+    height: 50vh;
     width: 100%;
     background-size: cover;
     background-position: 0% 35%;
+
+    @media (max-width: 1400px) {
+      background-position: 0% 30%;
+      height: 40vh;
+    }
+
+    @media (max-width: 1100px) {
+      background-position: 0% 25%;
+      height: 30vh;
+    }
+
+    @media (max-width: 860px) {
+      background-position: 0% 10%;
+    }
   }
 
   .item {
@@ -139,18 +155,28 @@
 
   .item__block {
     display: grid;
-    grid-template-rows: 50px 100px 70px 40px;
+    grid-template-rows: 150px 40px;
     grid-template-areas: 
-    "subtitle"
-    "title"
-    "desc"
+    "info"
     "btn";
     width: 50%;
     text-align: center;
+
+    @media (max-width: 1400px) {
+      grid-template-rows: 40px 70px 50px 40px;
+    }
+
+    @media (max-width: 860px) {
+      grid-template-rows: 30px 60px 30px 30px;
+    }
   }
 
   .item__block_black {
     color: #000;
+  }
+
+  .item__block-text {
+    grid-area: info;
   }
 
   .item__title,
@@ -160,26 +186,57 @@
     justify-content: center;
   }
 
-  .item__title-wrapper {
-    grid-area: title;
-  }
-
   .item__title {
     font-size: 2.5rem;
     line-height: 2.5rem;
+    margin-bottom: 10px;
+
+    @media (max-width: 1400px) {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+
+    @media (max-width: 1100px) {
+      font-size: 1.7rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: 1.4rem;
+    }
   }
 
   .item__text {
     font-size: 1.2rem;
     line-height: 1.2rem;
-    grid-area: desc;
     font-weight: 600;
+
+    @media (max-width: 1400px) {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+
+    @media (max-width: 1100px) {
+      font-size: .9rem;
+    }
   }
 
   .item__text_big {
     font-size: 1.5rem;
     line-height: 1.5rem;
-    grid-area: subtitle;
+    margin-bottom: 10px;
+
+    @media (max-width: 1400px) {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
+
+    @media (max-width: 1100px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: 1rem;
+    }
   }
 
   .item__btn {
@@ -196,7 +253,11 @@
     color: #fff;
     font-size: 1.2rem;
     border: 1px solid #fff;
-    font-weight: 400;
+    font-weight: 600;
+
+    @media (max-width: 1400px) {
+      font-size: 1rem;
+    }
   }
 
   .item__btn_black {

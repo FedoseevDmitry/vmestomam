@@ -7,7 +7,7 @@
         <div class="certificate__info">
           <h2 class="certificate__title">Подарочный сертификат</h2>
 
-          <p class="certificate__text">В нашей студии Вы можете приобрести подарочные сертификаты любого номинала. Стильный и полезный подарок станет отличным решением для подарка.</p>
+          <p class="certificate__text">Подарите Вашим близким ЗАБОТУ и ВРЕМЯ на СЕБЯ. В нашей студии Вы можете приобрести сертификат на услуги любого номинала. Такой подарок станет идеальным решением по любому поводу.</p>
 
           <a class="certificate__btn" href="http://wa.me/79119251310" target="_blank">Узнать больше</a>
         </div>
@@ -30,31 +30,56 @@
     text-align: center;
     margin: 0 auto;
     margin-bottom: 25px;
-    font-size: 1.8rem;
-    line-height: 1.8rem;
+    font-size: 2rem;
+    line-height: 2rem;
+
+    @media (max-width: 1100px) {
+      font-size: 1.7rem;
+    }
+
+    @media (max-width: 860px) {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
   }
 
   .certificate__wrapper {
     display: flex;
     justify-content: center;
-    max-width: 80vw;
+    width: 80%;
     margin: 0 auto;
+    gap: 20px;
+
+    @media (max-width: 1100px) {
+      width: 100%;
+    }
   }
 
   .certificate__info {
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
     padding-top: 20px;
     padding-left: 50px;
-    width: 40%;
+    width: 50%;
+
+    @media (max-width: 1400px) {
+      padding-top: 10px;
+      padding-left: 25px;
+    }
+
+    @media (max-width: 860px) {
+      padding-left: 10px;
+      width: 60%;
+    }
   }
 
   .certificate__img {
-    width: max-content;
+    width: 30%;
     object-fit: contain;
     border-radius: 20px;
-    height: 40vh;
+
+    @media (max-width: 860px) {
+    }
   }
 
   .certificate__text {
@@ -76,6 +101,10 @@
     background-color: $mainColor;
     color: #fff;
     font-size: 1.2rem;
+
+    @media (max-width: 860px) {
+      font-size: 1rem;
+    }
   }
 
   .certificate__btn:hover {
