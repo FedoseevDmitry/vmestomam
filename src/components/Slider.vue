@@ -132,7 +132,7 @@
     background-position: 0% 35%;
 
     @media (max-width: 1400px) {
-      background-position: 0% 30%;
+      background-position: 0% 35%;
       height: 40vh;
     }
 
@@ -163,7 +163,7 @@
     text-align: center;
 
     @media (max-width: 1400px) {
-      grid-template-rows: 40px 70px 50px 40px;
+      grid-template-rows: 140px 40px;
     }
 
     @media (max-width: 860px) {
