@@ -29,7 +29,11 @@
         </div>
       </div>
 
-      <Slide right noOverlay class="header__burger burger">
+      <Slide
+      right
+      noOverlay
+      :closeOnNavigation="true"
+      class="header__burger burger">
         <ul class="burger__list nav__list">
           <li class="burger__item nav__item">
             <a class="burger__link nav__link" href="#promo">Акции</a>

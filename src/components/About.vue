@@ -223,7 +223,6 @@
   .advantages__img {
     background-size: cover;
     width: 60%;
-    height: 200px;
     background-position-x: center;
     background-position-y: 20%;
     background-repeat: no-repeat;
@@ -239,6 +238,7 @@
 
     @media (max-width: 560px) {
       width: 100%;
+      height: 160px;
     }
   }
 
