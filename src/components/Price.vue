@@ -177,6 +177,11 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     @media (max-width: 860px) {
       font-size: 1.5rem;
     }
+
+    @media (max-width: 660px) {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
   }
 
   .price__wrapper {
@@ -203,6 +208,11 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
 
     @media (max-width: 860px) {
       font-size: 1rem;
+    }
+
+    @media (max-width: 660px) {
+      font-size: 0.9rem;
+      line-height: 0.9rem;
     }
   }
 
@@ -231,6 +241,20 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     font-weight: 400;
     text-align: start;
     padding-left: 10%;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+
+  .header__text {
+    font-size: 1.2rem;
+  }
+
+  .header__title,
+  .header__text {
+    @media (max-width: 660px) {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
   }
 
   .price__category-wrapper {
@@ -263,6 +287,12 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     position: relative;
     text-transform: uppercase;
     font-size: 1.2rem;
+    line-height: 1.2rem;
+
+    @media (max-width: 660px) {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
   }
 
   .category__title:hover {
@@ -285,6 +315,10 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
 
   .item:first-child {
     margin-top: 5px;
+
+    @media (max-width: 1100px) {
+      margin-top: 0;
+    }
   }
 
   .item:hover {
@@ -295,6 +329,8 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     text-align: start;
     padding-left: 10px;
     font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
   }
 
   .title-span {
@@ -308,6 +344,31 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     @media (max-width: 860px) {
       left: -4%;
     }
+
+    @media (max-width: 560px) {
+      left: -5%;
+    }
+
+    @media (max-width: 400px) {
+      left: -6%;
+    }
+  }
+
+  .item__text {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .item__title,
+  .item__text {
+    @media (max-width: 660px) {
+      font-size: .9rem;
+      line-height: 0.9rem;
+    }
   }
 
   .price__description {
@@ -315,9 +376,15 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
     margin: 0 auto;
     opacity: 0.7;
     font-size: 0.9rem;
+    line-height: 0.9rem;
 
     @media (max-width: 860px) {
       width: 90%;
+    }
+
+    @media (max-width: 660px) {
+      font-size: .8rem;
+      line-height: 0.8rem;
     }
   }
 

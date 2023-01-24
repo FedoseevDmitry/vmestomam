@@ -41,6 +41,13 @@
     align-items: center;
     text-align: center;
     overflow: hidden;
+
+    @media (max-width: 660px) {
+      width: 70px;
+      height: 70px;
+      font-size: 0.8rem;
+      line-height: 0.8rem;
+    }
   }
 
   .sign-up__btn:after {

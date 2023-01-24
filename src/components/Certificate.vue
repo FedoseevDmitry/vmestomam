@@ -2,10 +2,12 @@
   <section class="cerificate" id="certificate">
     <div class="container">
       <div class="certificate__wrapper">
+        <h2 class="certificate__title certificate__title_mobile">Подарочный сертификат</h2>
+
         <img class="certificate__img" src="../assets/images/cert.jpg" alt="Изображение подарочного сертификата" width="1796" height="1288">
 
         <div class="certificate__info">
-          <h2 class="certificate__title">Подарочный сертификат</h2>
+          <h2 class="certificate__title certificate__title_desktop">Подарочный сертификат</h2>
 
           <p class="certificate__text">Подарите Вашим близким ЗАБОТУ и ВРЕМЯ на СЕБЯ. В нашей студии Вы можете приобрести сертификат на услуги любого номинала. Такой подарок станет идеальным решением по любому поводу.</p>
 
@@ -35,11 +37,33 @@
 
     @media (max-width: 1100px) {
       font-size: 1.7rem;
+      line-height: 1.7rem;
     }
 
     @media (max-width: 860px) {
       font-size: 1.5rem;
+      line-height: 1.5rem;
       margin-bottom: 10px;
+    }
+
+    @media (max-width: 660px) {
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+      margin-bottom: 5px;
+    }
+  }
+
+  .certificate__title_desktop {
+    @media (max-width: 570px) {
+      display: none;
+    }
+  }
+
+  .certificate__title_mobile {
+    display: none;
+
+    @media (max-width: 570px) {
+      display: block;
     }
   }
 
@@ -52,6 +76,11 @@
 
     @media (max-width: 1100px) {
       width: 100%;
+    }
+
+    @media (max-width: 570px) {
+      flex-direction: column;
+      gap: 5px;
     }
   }
 
@@ -71,6 +100,11 @@
       padding-left: 10px;
       width: 60%;
     }
+
+    @media (max-width: 570px) {
+      padding: 0;
+      width: 100%;
+    }
   }
 
   .certificate__img {
@@ -78,7 +112,9 @@
     object-fit: contain;
     border-radius: 20px;
 
-    @media (max-width: 860px) {
+    @media (max-width: 570px) {
+      margin: 0 auto;
+      width: 40%;
     }
   }
 
@@ -86,6 +122,8 @@
     font-size: 1rem;
     text-align: justify;
     margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .certificate__btn {
@@ -104,6 +142,11 @@
 
     @media (max-width: 860px) {
       font-size: 1rem;
+    }
+
+    @media (max-width: 660px) {
+      font-size: .9rem;
+      line-height: 0.9rem;
     }
   }
 

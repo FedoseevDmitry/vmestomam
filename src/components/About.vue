@@ -41,16 +41,16 @@
             <div class="slide__wrapper">
               <h4 class="slide__title">{{ review.fullname }}</h4>
 
-              <div class="slide__text-wrapper">
-                <p class="slide__text">{{ review.desc }}</p>
+                <div class="slide__text-wrapper">
+                  <p class="slide__text" :class="{ slide__text_expanded: review.show }">{{ review.desc }}</p>
 
-                <collapse-transition>
-                  <p class="slide__text slide__text_full" v-show="review.show">{{ review.showMore }}</p>
-                </collapse-transition>
+                  <collapse-transition>
+                    <p class="slide__text slide__text_expanded slide__text_full" v-show="review.show">{{ review.showMore }}</p>
+                  </collapse-transition>
 
-                <button class="slide__btn" @click="review.show = !review.show" v-if="!review.show">Показать полностью</button>
-                <button class="slide__btn" @click="review.show = !review.show" v-if="review.show">Скрыть</button>
-              </div>
+                  <button class="slide__btn" @click="review.show = !review.show" v-if="!review.show">Показать полностью</button>
+                  <button class="slide__btn" @click="review.show = !review.show" v-if="review.show">Скрыть</button>
+                </div>
             </div>
           </swiper-slide>
         </swiper>
@@ -78,17 +78,18 @@
   export default {
     name: 'About',
     components: {
-      Swiper,
-      SwiperSlide,
-      CollapseTransition
-    },
+    Swiper,
+    SwiperSlide,
+    CollapseTransition,
+},
     data () {
       return {
         breakpoints: {
           1620: {slidesPerView: 3, spaceBetween: 100},
           1264: {slidesPerView: 3, spaceBetween: 50},
           900: {slidesPerView: 2, spaceBetween: 50},
-          600: {slidesPerView: 2, spaceBetween: 20},
+          600: {slidesPerView: 1, spaceBetween: 20},
+          100: {slidesPerView: 1, spaceBetween: 20},
         },
         advantages: {
           kidsRoom: {
@@ -184,6 +185,11 @@
     @media (max-width: 860px) {
       font-size: 1.5rem;
     }
+
+    @media (max-width: 660px) {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
   }
 
   .about__title_small {
@@ -196,6 +202,10 @@
     @media (max-width: 860px) {
       font-size: 1.3em;
     }
+
+    @media (max-width: 660px) {
+      font-size: 1.1rem;
+    }
   }
 
   // ADVANTAGES
@@ -204,11 +214,16 @@
     margin-bottom: 50px;
     background-color: $newBgColor;
     color: #000;
+
+    @media (max-width: 560px) {
+      flex-direction: column;
+    }
   }
 
   .advantages__img {
     background-size: cover;
     width: 60%;
+    height: 200px;
     background-position-x: center;
     background-position-y: 20%;
     background-repeat: no-repeat;
@@ -220,6 +235,10 @@
 
     @media (max-width: 860px) {
       width: 40%;
+    }
+
+    @media (max-width: 560px) {
+      width: 100%;
     }
   }
 
@@ -234,6 +253,10 @@
 
     @media (max-width: 860px) {
       width: 60%;
+    }
+
+    @media (max-width: 560px) {
+      width: 100%;
     }
   }
 
@@ -300,18 +323,32 @@
     @media (max-width: 860px) {
       font-size: .9rem;
     }
+
+    @media (max-width: 660px) {
+      font-size: .8rem;
+      line-height: 0.8rem;
+      margin-bottom: 2px;
+    }
   }
 
   .advantage__text {
     font-size: 1rem;
     text-align: center;
+    line-height: 1rem;
 
     @media (max-width: 1400px) {
       font-size: .9rem;
+      line-height: 0.9rem;
     }
 
     @media (max-width: 860px) {
       font-size: .8rem;
+      line-height: 0.8rem;
+    }
+
+    @media (max-width: 660px) {
+      font-size: .75rem;
+      line-height: 0.8rem;
     }
   }
 
@@ -359,6 +396,10 @@
     justify-content: center;
     color: #000;
     font-size: 1rem;
+
+    @media (max-width: 560px) {
+      font-size: .9rem;
+    }
   }
 
   .slide__text-wrapper {
@@ -388,6 +429,10 @@
     font-size: 1rem;
     padding: 10px;
     padding-bottom: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 
     @media (max-width: 1100px) {
       padding: 5px;
@@ -397,17 +442,31 @@
     @media (max-width: 860px) {
       font-size: .9rem;
     }
+
+    @media (max-width: 560px) {
+      font-size: 0.8rem;
+      line-height: 0.9rem;
+    }
   }
 
-  .slide__text_full {
+  .slide__text_expanded {
     font-size: 1rem;
     overflow: unset;
-    max-height: none;
-    padding-top: 0;
+    -webkit-line-clamp: unset;
 
     @media (max-width: 860px) {
       font-size: .9rem;
+      padding: 5px 5px 0;
     }
+
+    @media (max-width: 560px) {
+      font-size: 0.8rem;
+      line-height: 0.9rem;
+    }
+  }
+
+  .slide__text_full {
+    padding-top: 0;
   }
 
   .slide__btn {
@@ -424,9 +483,15 @@
     display: flex;
     box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6);
     font-size: 1rem;
+    margin-bottom: 0;
 
     @media (max-width: 860px) {
       font-size: .9rem;
+    }
+
+    @media (max-width: 660px) {
+      font-size: .8rem;
+      line-height: 0.8rem;
     }
   }
 
@@ -453,6 +518,11 @@
 
     @media (max-width: 860px) {
       font-size: 1rem;
+    }
+
+    @media (max-width: 660px) {
+      font-size: .9rem;
+      line-height: 0.9rem;
     }
   }
 

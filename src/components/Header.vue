@@ -16,7 +16,7 @@
             </div>
           </div>
 
-          <div class="header__module-wrapper">
+          <div class="header__module-wrapper header__module-wrapper">
             <img class="header__img" src="../assets/images/location.png" alt="Иконка местоположения" width="512" height="512">
 
             <div class="header__item-wrapper">
@@ -28,6 +28,54 @@
           </div>
         </div>
       </div>
+
+      <Slide right noOverlay class="header__burger burger">
+        <ul class="burger__list nav__list">
+          <li class="burger__item nav__item">
+            <a class="burger__link nav__link" href="#promo">Акции</a>
+          </li>
+
+          <li class="burger__item nav__item">
+            <a class="burger__link nav__link" href="#price">Цены и услуги</a>
+          </li>
+
+          <li class="burger__item nav__item">
+            <a class="burger__link nav__link" href="#about">Почему мы?</a>
+          </li>
+
+          <li class="burger__item nav__item">
+            <a class="burger__link nav__link" href="#certificate">Сертификат</a>
+          </li>
+
+          <li class="burger__item nav__item">
+            <a class="burger__link nav__link" href="#contacts">Контакты</a>
+          </li>
+        </ul>
+
+        <div class="burger__footer-wrapper">
+          <ul class="burger__list social__list">
+            <li class="burger__item social__item">
+              <a class="burger__link social__link" href="http://vk.com/vmestomam">
+                <img class="burger__img social__img" src="../assets/images/vk.svg" alt="Иконка ВКонтакте">
+              </a>
+            </li>
+
+            <li class="burger__item social__item">
+              <a class="burger__link social__link" href="https://t.me/s/vmestomam">
+                <img class="burger__img social__img" src="../assets/images/telegram.svg" alt="Иконка Телеграма">
+              </a>
+            </li>
+
+            <li class="burger__item social__item">
+              <a class="burger__link social__link" href="http://wa.me/79119251310">
+                <img class="burger__img social__img" src="../assets/images/whatsapp.svg" alt="Иконка Ватсапа">
+              </a>
+            </li>
+          </ul>
+
+          <a class="header__text header__link" href="tel:+78126035313">+7 (812) 603-53-13</a>
+        </div>
+      </Slide>
 
       <div class="header__wrapper header__wrapper_colored">
         <div class="header__wrapper header__wrapper_no-margin">
@@ -128,6 +176,10 @@ export default {
     @media (max-width: 860px) {
       max-width: 220px;
     }
+
+    @media (max-width: 660px) {
+      max-width: 200px;
+    }
   }
 
   .header__info-wrapper {
@@ -143,8 +195,15 @@ export default {
 
     @media (max-width: 860px) {
       column-gap: 5px;
+      display: none;
     }
   }
+
+  // .header__module-wrapper_address {
+  //   @media (max-width: 680px) {
+  //     display: none;
+  //   }
+  // }
 
   .header__img {
     width: 32px;
@@ -187,6 +246,12 @@ export default {
     @media (max-width: 860px) {
       font-size: .8rem;
     }
+
+    @media (max-width: 660px) {
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #fff;
+    }
   }
 
   .header__link:hover,
@@ -200,6 +265,10 @@ export default {
     background-color: $mainColor;
     width: 100%;
     margin-bottom: 0;
+
+    @media (max-width: 660px) {
+      display: none;
+    }
   }
 
   .header__wrapper_no-margin {
@@ -215,6 +284,8 @@ export default {
 
     @media (max-width: 1100px) {
       width: 70%;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
   }
 
@@ -222,10 +293,23 @@ export default {
     display: flex;
     width: 100%;
     justify-content: space-between;
+
+    @media (max-width: 660px) {
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      row-gap: 10px;
+      margin-bottom: 50px;
+    }
   }
 
   .nav__item {
     position: relative;
+
+    @media (max-width: 660px) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .nav__item:after {
@@ -242,6 +326,10 @@ export default {
   .nav__item:hover:after {
     width: 100%;
     left: 0;
+
+    @media (max-width: 660px) {
+      width: 0;
+    }
   }
 
   .nav__link {
@@ -258,6 +346,10 @@ export default {
     @media (max-width: 860px) {
       font-size: .9rem;
     }
+
+    @media (max-width: 660px) {
+      font-size: 1rem;
+    }
   }
 
   //SOCIAL
@@ -269,6 +361,23 @@ export default {
   .social__list {
     display: flex;
     column-gap: 20px;
+    align-items: center;
+
+    @media (max-width: 660px) {
+      padding: 0;
+      justify-content: center;
+      column-gap: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .social__item {
+    display: flex;
+  }
+
+  .social__link {
+    display: flex;
+    align-items: center;
   }
 
   .social__img {
@@ -284,5 +393,41 @@ export default {
     transition: all ease-in-out .3s;
     filter: invert(70%) sepia(34%) saturate(525%) hue-rotate(124deg) brightness(87%) contrast(87%);
     transform: scale(1.1);
+  }
+</style>
+
+<style lang="scss">
+  $mainColor: #694f38;
+  $secondColor: #58b6ac;
+
+  .bm-burger-button {
+    right: 16px;
+    left: unset;
+    top: 24px;
+    z-index: 100;
+    position: fixed;
+    display: none;
+
+    @media (max-width: 660px) {
+      display: block;
+    }
+  }
+
+  .bm-burger-bars {
+    background-color: $secondColor;
+  }
+
+  .bm-item-list {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .burger__footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
   }
 </style>
