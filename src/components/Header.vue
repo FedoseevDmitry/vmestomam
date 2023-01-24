@@ -401,33 +401,33 @@ export default {
   $secondColor: #58b6ac;
 
   .bm-burger-button {
-    right: 16px;
-    left: unset;
-    top: 24px;
-    z-index: 100;
-    position: fixed;
-    display: none;
+    right: 16px !important;
+    left: unset !important;
+    top: 24px !important;
+    z-index: 100 !important;
+    position: fixed !important;
+    display: none !important;
 
     @media (max-width: 660px) {
-      display: block;
+      display: block !important;
     }
   }
 
   .bm-burger-bars {
-    background-color: $secondColor;
+    background-color: $secondColor !important;
   }
 
   .bm-item-list {
-    margin: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    margin: 0 !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
   }
 
   .burger__footer-wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
   }
 </style>
