@@ -334,6 +334,10 @@
       max-width: unset;
       padding: 5px 10px;
     }
+
+    @media (max-width: 560px) {
+      font-size: 1rem;
+    }
   }
 
   .slide__btn:hover {
