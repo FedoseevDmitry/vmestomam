@@ -93,15 +93,15 @@
             subtitle: 'Будний день с 9.00 до 12.00',
             descriptions: [
               {name: 'Женская', blocks: [
-                {item: 'короткие', oldValue: '1000', newValue: '800 руб.'},
-                {item: 'средние', oldValue: '1200', newValue: '1000 руб.'},
-                {item: 'длинные', oldValue: '1400', newValue: '1200 руб.'},
+                {item: 'короткие', oldValue: '1200', newValue: '1000 руб.'},
+                {item: 'средние', oldValue: '1400', newValue: '1200 руб.'},
+                {item: 'длинные', oldValue: '1600', newValue: '1400 руб.'},
               ]},
               {name: 'Мужская', blocks: [
-                {item: '', oldValue: '800', newValue: '600 руб.'},
+                {item: '', oldValue: '950', newValue: '800 руб.'},
               ]},
               {name: 'Детская', blocks: [
-                {item: '', oldValue: '600', newValue: '500 руб.'},
+                {item: '', oldValue: '750', newValue: '600 руб.'},
               ]},
             ],
             link: 'https://widget.sonline.su/ru/services/?placeid=6663',

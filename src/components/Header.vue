@@ -16,7 +16,7 @@
             </div>
           </div>
 
-          <div class="header__module-wrapper header__module-wrapper">
+          <div class="header__module-wrapper header__module-wrapper_address">
             <img class="header__img" src="../assets/images/location.png" alt="Иконка местоположения" width="512" height="512">
 
             <div class="header__item-wrapper">
@@ -199,15 +199,18 @@ export default {
 
     @media (max-width: 860px) {
       column-gap: 5px;
+    }
+
+    @media (max-width: 660px) {
       display: none;
     }
   }
 
-  // .header__module-wrapper_address {
-  //   @media (max-width: 680px) {
-  //     display: none;
-  //   }
-  // }
+  .header__module-wrapper_address {
+    @media (max-width: 680px) {
+      display: none;
+    }
+  }
 
   .header__img {
     width: 32px;

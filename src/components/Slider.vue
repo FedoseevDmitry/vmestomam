@@ -28,17 +28,18 @@
         </div>
 
         <div class="item__block">
-
           <div class="item__block-text">
             <p class="item__text item__text_big">ЗНАКОМСТВО С VMESTOMAM:</p>
 
             <div class="item__title-wrapper">
               <h2 class="item__title">ПОДАРОК 20%</h2>
-              <h2 class="item__title item__title_second">НА ПЕРВОЕ ПОСЕЩЕНИЕ </h2>
+              <h2 class="item__title item__title_second">НА ПЕРВОЕ ПОСЕЩЕНИЕ*</h2>
             </div>
           </div>
 
           <a class="item__btn" href="http://wa.me/79119251310?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5." target="_blank">Записаться</a>
+
+          <p class="item__text item__text_footnote">*Скидка не суммируется с другими акциями и предложениями.</p>
         </div>
        
       </div>
@@ -136,7 +137,7 @@
     transform: translate(-50%, 0);
 
     @media (max-width: 1400px) {
-      top: 35%;
+      top: 25%;
     }
 
     @media (max-width: 1100px) {
@@ -189,13 +190,13 @@
     @media (max-width: 560px) {
       flex-direction: column;
       align-items: center;
-      row-gap: 30px;
+      row-gap: 10px;
     }
   }
 
   .item__block {
     display: grid;
-    grid-template-rows: 200px 40px;
+    grid-template-rows: 200px 40px 85px;
     grid-template-areas: 
     "info"
     "btn";
@@ -203,20 +204,20 @@
     text-align: center;
 
     @media (max-width: 1400px) {
-      grid-template-rows: 160px 40px;
+      grid-template-rows: 160px 40px 50px;
     }
 
     @media (max-width: 1100px) {
-      grid-template-rows: 130px 40px;
+      grid-template-rows: 120px 40px 30px;
     }
 
     @media (max-width: 860px) {
-      grid-template-rows: 110px 40px;
+      grid-template-rows: 110px 40px 30px;
     }
 
     @media (max-width: 560px) {
-      grid-template-rows: 80px 30px;
-      width: 80%;
+      grid-template-rows: 80px 30px 20px;
+      width: 100%;
     }
   }
 
@@ -310,6 +311,28 @@
     @media (max-width: 660px) {
       font-size: .8rem;
       line-height: 0.8rem;
+    }
+  }
+
+  .item__text_footnote {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 15px;
+    font-size: 0.7rem;
+
+    @media (max-width: 1100px) {
+      font-size: .6rem;
+      line-height: 0.6rem;
+      padding-right: 5px;
+    }
+
+    @media (max-width: 860px) {
+      font-size: .45rem;
+      line-height: 0.45rem;
+      padding-bottom: 2px;
+      text-align: unset;
+      padding-right: 2px;
     }
   }
 

@@ -59,11 +59,11 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
             title: 'Стрижки',
             showCategory: true,
             position: [
-              {name: 'Женская стрижка, короткие', price: '1000 руб.'},
-              {name: 'Женская стрижка, средние', price: '1200 руб.'},
-              {name: 'Женская стрижка, длинные', price: '1400 руб.'},
-              {name: 'Мужская стрижка', price: '800 руб.'},
-              {name: 'Детская стрижка', price: '600 руб.'},
+              {name: 'Женская стрижка, короткие', price: '1200 руб.'},
+              {name: 'Женская стрижка, средние', price: '1400 руб.'},
+              {name: 'Женская стрижка, длинные', price: '1600 руб.'},
+              {name: 'Мужская стрижка', price: '950 руб.'},
+              {name: 'Детская стрижка', price: '750 руб.'},
             ]
           },
           coloring: {
