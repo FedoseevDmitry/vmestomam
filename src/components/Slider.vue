@@ -11,13 +11,7 @@
   >
     <swiper-slide class="slider">
       <div class="slider__image-wrapper">
-        <picture class="slider__image">
-          <source media="(max-width: 1400px)" srcset="@/assets/images/header-slider/slider-1.jpg">
-          <source media="(max-width: 1100px)" srcset="@/assets/images/header-slider/slider-2.jpg">
-          <source media="(max-width: 860px)" srcset="@/assets/images/header-slider/slider-3.jpg">
-          <source media="(max-width: 560px)" srcset="@/assets/images/header-slider/slider-4.jpg">
-          <img src="@/assets/images/header-slider/slide-5.jpg" alt="Шапка">
-        </picture>
+        <img class="slider__image" src="@/assets/images/header-slider/slide.jpg" alt="Шапка">
       </div>
       <a class="item__btn" href="https://widget.sonline.su/ru/services/?placeid=6663" target="_blank">Записаться онлайн</a>
     </swiper-slide>
