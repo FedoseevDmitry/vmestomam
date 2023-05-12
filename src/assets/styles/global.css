@@ -1,6 +1,7 @@
-@font-face { font-family: Montserrat; font-weight: 400; src: url('../fonts/Montserrat-Regular.ttf');} 
+@font-face { font-family: TenorSans; font-weight: 400; src: url('../fonts/TenorSans-Regular.ttf');} 
+/* @font-face { font-family: Montserrat; font-weight: 400; src: url('../fonts/Montserrat-Regular.ttf');}
 @font-face { font-family: Montserrat; font-weight: 700; src: url('../fonts/Montserrat-Bold.ttf');}
-@font-face { font-family: Montserrat; font-weight: 900; src: url('../fonts/Montserrat-Black.ttf');}
+@font-face { font-family: Montserrat; font-weight: 900; src: url('../fonts/Montserrat-Black.ttf');} */
 
 html {
   box-sizing: border-box;
@@ -15,7 +16,7 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  font-family: Montserrat, sans-serif;
+  font-family: TenorSans, sans-serif;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;

@@ -101,9 +101,9 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
             title: 'Маникюр',
             showCategory: false,
             position: [
-              {name: 'Маникюр без покрытия', price: '850 руб.'},
-              {name: 'Маникюр + гель/лак + снятие', price: '1600 руб.'},
-              {name: 'Мужской маникюр без покрытия', price: '950 руб.'},
+              {name: 'Маникюр без покрытия', price: '950 руб.'},
+              {name: 'Маникюр + гель/лак + снятие', price: '1800 руб.'},
+              {name: 'Мужской маникюр без покрытия', price: '1100 руб.'},
             ]
           },
           pedicure: {
@@ -119,9 +119,9 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
             title: 'Брови',
             showCategory: false,
             position: [
-              {name: 'Коррекция', price: '500 руб.'},
-              {name: 'Коррекция + окрашивание краской', price: '800 руб.'},
-              {name: 'Коррекция + окрашивание хной', price: '1000 руб.'},
+              {name: 'Коррекция', price: '600 руб.'},
+              {name: 'Коррекция + окрашивание краской', price: '1000 руб.'},
+              {name: 'Коррекция + окрашивание хной', price: '1200 руб.'},
               {name: 'Ламинирование', price: '2000 руб.'},
             ]
           },
