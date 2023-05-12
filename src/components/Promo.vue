@@ -182,8 +182,8 @@
 </script>
 
 <style lang="scss">
-  $mainColor: #694f38;
-  $secondColor: #58b6ac;
+  $mainColor: #825A37;
+  $secondColor: #789191;
 
   .promo__title {
     margin-bottom: 25px;

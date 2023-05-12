@@ -4,19 +4,10 @@
       <h2 class="about__title">Почему мы?</h2>
 
       <div class="about__advantages advantages">
-        <div class="advantages__img"></div>
-
-        <div class="advantages__wrapper">
-          <div class="advantage" v-for="advantage in advantages">
-            <div class="advantage__img-wrapper">
-             <img class="advantage__img" :src="getImgUrl(advantage.img)" alt="Иконка">
-            </div>
-
-            <h3 class="advantage__title">{{ advantage.title }}</h3>
-
-            <p class="advantage__text">{{ advantage.desc }}</p>
-          </div>
-        </div>
+        <picture class="advantages__img">
+          <source media="(max-width: 560px)" srcset="@/assets/images/why-560.jpg">
+          <img src="@/assets/images/why.jpg" alt="Наши преимущества">
+        </picture>
       </div>
 
       <h3 class="about__title about__title_small">Отзывы</h3>
@@ -91,28 +82,6 @@
           600: {slidesPerView: 1, spaceBetween: 20},
           100: {slidesPerView: 1, spaceBetween: 20},
         },
-        advantages: {
-          kidsRoom: {
-            img: 'kids.png',
-            title: 'Детская комната',
-            desc: 'Ваш ребёнок с удовольствием проведёт время в нашей детской, при необходимости можно заказать няню.',
-          },
-          masters: {
-            img: 'masters.png',
-            title: 'Мастера',
-            desc: 'Наши мастера имеют опыт работы от 3х лет и регулярно повышают свою квалификацию.',
-          },
-          sterilize: {
-            img: 'sterilize.png',
-            title: 'Стерильность',
-            desc: 'Мы обеспечиваем безопасность Вашего здоровья выполняя все требования и нормы СЭС и СанПин.',
-          },
-          guarantee: {
-            img: 'guarantee.png',
-            title: 'Гарантия',
-            desc: 'У нас действует гарантийный срок на покрытие 5 дней со дня оказания услуги.',
-          },
-        },
         reviews: {
           first: {
             img: 'woman.png',
@@ -169,8 +138,8 @@
 </script>
 
 <style scoped lang="scss">
-  $mainColor: #694f38;
-  $secondColor: #58b6ac;
+  $mainColor: #825A37;
+  $secondColor: #789191;
   $newBgColor: #e2e2e2;
 
   .about__title {
@@ -212,7 +181,6 @@
   .advantages {
     display: flex;
     margin-bottom: 50px;
-    background-color: $newBgColor;
     color: #000;
 
     @media (max-width: 560px) {
@@ -222,133 +190,10 @@
 
   .advantages__img {
     background-size: cover;
-    width: 60%;
-    background-position-x: center;
-    background-position-y: 20%;
-    background-repeat: no-repeat;
-    background-image: url('../assets/images/header-slider/slide-6.jpg');
-
-    @media (max-width: 1100px) {
-      width: 50%;
-    }
-
-    @media (max-width: 860px) {
-      width: 40%;
-    }
+    width: 100%;
 
     @media (max-width: 560px) {
       width: 100%;
-      height: 160px;
-    }
-  }
-
-  .advantages__wrapper {
-    display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
-    width: 40%;
-
-    @media (max-width: 1100px) {
-      width: 50%;
-    }
-
-    @media (max-width: 860px) {
-      width: 60%;
-    }
-
-    @media (max-width: 560px) {
-      width: 100%;
-    }
-  }
-
-  .advantage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-
-    @media (max-width: 1400px) {
-      padding: 5px;
-    }
-  }
-
-  .advantage:nth-child(odd) {
-    border-right: 1px solid rgba(1, 1, 1, 0.1);
-  }
-
-  .advantage:nth-child(-n+2) {
-    border-bottom: 1px solid rgba(1, 1, 1, 0.1);
-  }
-
-  .advantage__img-wrapper {
-    margin-bottom: 5px;
-    background-color: $secondColor;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media (max-width: 1400px) {
-      width: 72px;
-      height: 72px;
-    }
-
-    @media (max-width: 860px) {
-      width: 56px;
-      height: 56px;
-    }
-  }
-
-  .advantage__img {
-    max-width: 64px;
-
-    @media (max-width: 1400px) {
-      max-width: 48px;
-    }
-
-    @media (max-width: 860px) {
-      max-width: 32px;
-    }
-  }
-
-  .advantage__title {
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-
-    @media (max-width: 1400px) {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 860px) {
-      font-size: .9rem;
-    }
-
-    @media (max-width: 660px) {
-      font-size: .8rem;
-      line-height: 0.8rem;
-      margin-bottom: 2px;
-    }
-  }
-
-  .advantage__text {
-    font-size: 1rem;
-    text-align: center;
-    line-height: 1rem;
-
-    @media (max-width: 1400px) {
-      font-size: .9rem;
-      line-height: 0.9rem;
-    }
-
-    @media (max-width: 860px) {
-      font-size: .8rem;
-      line-height: 0.8rem;
-    }
-
-    @media (max-width: 660px) {
-      font-size: .75rem;
-      line-height: 0.8rem;
     }
   }
 

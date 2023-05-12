@@ -2,7 +2,7 @@
   <header class="header" id="header">
     <div class="container">
       <div class="header__wrapper">
-        <img class="header__logo" src="../assets/images/logo.png" alt="Логотип студии vMestoMam">
+        <img class="header__logo" src="../assets/images/logo1.png" alt="Логотип студии vMestoMam">
 
         <div class="header__info-wrapper">
           <div class="header__module-wrapper">
@@ -152,8 +152,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  $mainColor: #694f38;
-  $secondColor: #58b6ac;
+  $mainColor: #825A37;
+  $secondColor: #789191;
 
   .header {
     padding-top: 10px;
@@ -398,14 +398,14 @@ export default {
 
   .social__img:hover {
     transition: all ease-in-out .3s;
-    filter: invert(70%) sepia(34%) saturate(525%) hue-rotate(124deg) brightness(87%) contrast(87%);
+    filter: invert(63%) sepia(14%) saturate(398%) hue-rotate(131deg) brightness(86%) contrast(84%);
     transform: scale(1.1);
   }
 </style>
 
 <style lang="scss">
-  $mainColor: #694f38;
-  $secondColor: #58b6ac;
+  $mainColor: #825A37;
+  $secondColor: #789191;
 
   .bm-burger-button {
     right: 16px !important;

@@ -160,8 +160,8 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
 </script>
 
 <style scoped lang="scss">
-  $mainColor: #694f38;
-  $secondColor: #58b6ac;
+  $mainColor: #825A37;
+  $secondColor: #789191;
   .price {
     padding-top: 10px;
   }
